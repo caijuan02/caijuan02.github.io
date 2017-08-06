@@ -131,10 +131,10 @@
     <link href="http://yoursite.com/2017/06/30/My-New-Post/"/>
     <id>http://yoursite.com/2017/06/30/My-New-Post/</id>
     <published>2017-06-30T04:56:39.000Z</published>
-    <updated>2017-08-06T03:49:51.173Z</updated>
+    <updated>2017-08-06T07:07:13.365Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generete 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客MyBlog目录的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generete 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
 ]]></content>
     
     <summary type="html">
