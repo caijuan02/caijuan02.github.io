@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-08T04:14:48.050Z</updated>
+  <updated>2017-08-06T03:39:52.160Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://yoursite.com/2017/07/08/study/"/>
     <id>http://yoursite.com/2017/07/08/study/</id>
     <published>2017-07-08T04:13:49.000Z</published>
-    <updated>2017-07-08T04:14:48.050Z</updated>
+    <updated>2017-08-06T03:39:52.160Z</updated>
     
-    <content type="html"><![CDATA[<p>因为换了电脑，测试是否成功</p>
+    <content type="html"><![CDATA[<p>前端面试总结</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;因为换了电脑，测试是否成功&lt;/p&gt;
+      &lt;p&gt;前端面试总结&lt;/p&gt;
 
     
     </summary>
