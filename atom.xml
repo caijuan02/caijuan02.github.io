@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-08-06T07:03:24.664Z</updated>
+  <updated>2017-08-06T07:27:22.772Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="https://caijuan02.github.io/2017/07/08/study/"/>
     <id>https://caijuan02.github.io/2017/07/08/study/</id>
     <published>2017-07-08T04:13:49.000Z</published>
-    <updated>2017-08-06T07:03:24.664Z</updated>
+    <updated>2017-08-06T07:27:22.772Z</updated>
     
     <content type="html"><![CDATA[<p>前端面试总结</p>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p>1、HTML5新增的标签，对语义化的理解</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p>1、HTML5新增的标签，对语义化的理解<br><a id="more"></a></p>
 <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>1、CSS3的新属性<br>2、盒模型<br>3、实现定宽高和不定宽高的垂直和水平居中<br>4、display设置inline-block 和 block 的区别<br>5、请描述BFC及其如何工作</p>
 <h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>1、为什么要用时间委托<br>2、同步和异步的区别<br>3、实现tab切换<br>4、this的用法<br>5、call 和 apply 的区别<br>6、原始数据类型和引用数据类型<br>7、数组去重<br>8、求数组中最大值和第二大值<br>9、get 和 post 的区别<br>10、== 和 === 有什么区别<br>11、一句话介绍闭包及如何使用和为什么使用<br>12、了解原型链吗，使用原型链解决过什么问题</p>
 <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>1、了解框架实现的原理吗<br>2、如果要实现jQuery中的 .hide 会怎么实现</p>
@@ -34,8 +34,7 @@
     <summary type="html">
     
       &lt;p&gt;前端面试总结&lt;/p&gt;
-&lt;h2 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h2&gt;&lt;p&gt;1、HTML5新增的标签，对语义化的理解&lt;/p&gt;
-&lt;h2 id=&quot;css&quot;&gt;&lt;a href=&quot;#
+&lt;h2 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h2&gt;&lt;p&gt;1、HTML5新增的标签，对语义化的理解&lt;br&gt;
     
     </summary>
     
