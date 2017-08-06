@@ -4,9 +4,9 @@
   <subtitle>勤能补拙</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://caijuan02.github.io/"/>
   <updated>2017-08-06T07:03:24.664Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://caijuan02.github.io/</id>
   
   <author>
     <name>蔡娟</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>study</title>
-    <link href="http://yoursite.com/2017/07/08/study/"/>
-    <id>http://yoursite.com/2017/07/08/study/</id>
+    <link href="https://caijuan02.github.io/2017/07/08/study/"/>
+    <id>https://caijuan02.github.io/2017/07/08/study/</id>
     <published>2017-07-08T04:13:49.000Z</published>
     <updated>2017-08-06T07:03:24.664Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/08/hello-world/"/>
-    <id>http://yoursite.com/2017/07/08/hello-world/</id>
+    <link href="https://caijuan02.github.io/2017/07/08/hello-world/"/>
+    <id>https://caijuan02.github.io/2017/07/08/hello-world/</id>
     <published>2017-07-08T03:32:34.059Z</published>
     <updated>2017-06-28T02:53:52.000Z</updated>
     
@@ -71,8 +71,8 @@
   
   <entry>
     <title>js动态效果</title>
-    <link href="http://yoursite.com/2017/07/04/animation/"/>
-    <id>http://yoursite.com/2017/07/04/animation/</id>
+    <link href="https://caijuan02.github.io/2017/07/04/animation/"/>
+    <id>https://caijuan02.github.io/2017/07/04/animation/</id>
     <published>2017-07-04T05:21:00.000Z</published>
     <updated>2017-07-07T08:58:16.000Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>学习前端文档</title>
-    <link href="http://yoursite.com/2017/06/30/practice/"/>
-    <id>http://yoursite.com/2017/06/30/practice/</id>
+    <link href="https://caijuan02.github.io/2017/06/30/practice/"/>
+    <id>https://caijuan02.github.io/2017/06/30/practice/</id>
     <published>2017-06-30T05:43:39.000Z</published>
     <updated>2017-07-07T08:52:16.000Z</updated>
     
@@ -128,8 +128,8 @@
   
   <entry>
     <title>My New Post</title>
-    <link href="http://yoursite.com/2017/06/30/My-New-Post/"/>
-    <id>http://yoursite.com/2017/06/30/My-New-Post/</id>
+    <link href="https://caijuan02.github.io/2017/06/30/My-New-Post/"/>
+    <id>https://caijuan02.github.io/2017/06/30/My-New-Post/</id>
     <published>2017-06-30T04:56:39.000Z</published>
     <updated>2017-08-06T07:07:13.365Z</updated>
     
