@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-08-06T07:37:44.006Z</updated>
+  <updated>2017-08-30T01:02:50.350Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://caijuan02.github.io/2017/08/30/vue-router/"/>
+    <id>https://caijuan02.github.io/2017/08/30/vue-router/</id>
+    <published>2017-08-30T01:02:50.193Z</published>
+    <updated>2017-08-30T01:02:50.350Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>interview</title>
