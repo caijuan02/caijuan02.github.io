@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-08-30T01:02:50.350Z</updated>
+  <updated>2017-08-30T01:14:23.976Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -16,13 +16,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>vue-router使用</title>
     <link href="https://caijuan02.github.io/2017/08/30/vue-router/"/>
     <id>https://caijuan02.github.io/2017/08/30/vue-router/</id>
-    <published>2017-08-30T01:02:50.193Z</published>
-    <updated>2017-08-30T01:02:50.350Z</updated>
+    <published>2017-08-30T05:43:39.000Z</published>
+    <updated>2017-08-30T01:14:23.976Z</updated>
+    
+    <content type="html"><![CDATA[<p>在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
+<p>#安装<br>安装步骤按照  <a href="http://www.jianshu.com/p/1626b8643676" target="_blank" rel="external">http://www.jianshu.com/p/1626b8643676</a>  一步一步来就可以了</p>
+<p>#文件(目前用到的文件)<br>1.index,html展示页面，不需要修改<br>2.main.js挂载App使用，也不需要修改<br>3.App.vue路由渲染的总页面，可以修改全局样式<br>4.router目录下的index.js是配置路由的<br>5.assets是放静态资源的，比如css、js、image<br>6.components目录文件是用来放组件的，可以是自己写的，我是把公共的头部header放在这个目录下了<br>7.page目录文件就是用来放你写的其他页面的vue文件</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用&lt;br&gt;
     
     </summary>
     

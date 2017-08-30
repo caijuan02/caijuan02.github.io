@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>蔡娟-爱学习的小前端</title>
+  <title>vue-router使用 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="蔡娟-爱学习的小前端">
+  <meta name="description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router使用">
 <meta property="og:url" content="https://caijuan02.github.io/2017/08/30/vue-router/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:updated_time" content="2017-08-30T01:02:50.350Z">
+<meta property="og:description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+<meta property="og:updated_time" content="2017-08-30T01:14:23.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蔡娟-爱学习的小前端">
+<meta name="twitter:title" content="vue-router使用">
+<meta name="twitter:description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
   
     <link rel="alternate" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -53,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://caijuan02.github.io"></form>
@@ -67,20 +70,33 @@
         <section id="main"><article id="post-vue-router" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/30/vue-router/" class="article-date">
-  <time datetime="2017-08-30T01:02:50.193Z" itemprop="datePublished">2017-08-30</time>
+  <time datetime="2017-08-30T05:43:39.000Z" itemprop="datePublished">2017-08-30</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue-router使用
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
+<p>#安装<br>安装步骤按照  <a href="http://www.jianshu.com/p/1626b8643676" target="_blank" rel="external">http://www.jianshu.com/p/1626b8643676</a>  一步一步来就可以了</p>
+<p>#文件(目前用到的文件)<br>1.index,html展示页面，不需要修改<br>2.main.js挂载App使用，也不需要修改<br>3.App.vue路由渲染的总页面，可以修改全局样式<br>4.router目录下的index.js是配置路由的<br>5.assets是放静态资源的，比如css、js、image<br>6.components目录文件是用来放组件的，可以是自己写的，我是把公共的头部header放在这个目录下了<br>7.page目录文件就是用来放你写的其他页面的vue文件</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://caijuan02.github.io/2017/08/30/vue-router/" data-id="cj6ybklqn0000j86x80r2z8u0" class="article-share-link">Share</a>
+      <a data-url="https://caijuan02.github.io/2017/08/30/vue-router/" data-id="cj6yc0uyu0005606x6pm43vct" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -91,7 +107,7 @@
   
   
     <a href="/2017/08/06/interview/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">interview</div>
     </a>
   
@@ -124,12 +140,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/08/30/vue-router/">(no title)</a>
+            <a href="/2017/08/30/vue-router/">vue-router使用</a>
           </li>
         
           <li>
@@ -161,7 +177,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 蔡娟<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
