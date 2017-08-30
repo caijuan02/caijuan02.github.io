@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-08-30T01:14:23.976Z</updated>
+  <updated>2017-08-30T01:19:34.033Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://caijuan02.github.io/2017/08/30/vue-router/"/>
     <id>https://caijuan02.github.io/2017/08/30/vue-router/</id>
     <published>2017-08-30T05:43:39.000Z</published>
-    <updated>2017-08-30T01:14:23.976Z</updated>
+    <updated>2017-08-30T01:19:34.033Z</updated>
     
     <content type="html"><![CDATA[<p>在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
 <p>#安装<br>安装步骤按照  <a href="http://www.jianshu.com/p/1626b8643676" target="_blank" rel="external">http://www.jianshu.com/p/1626b8643676</a>  一步一步来就可以了</p>
@@ -63,40 +63,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://caijuan02.github.io/2017/07/08/hello-world/"/>
-    <id>https://caijuan02.github.io/2017/07/08/hello-world/</id>
-    <published>2017-07-08T03:32:34.059Z</published>
-    <updated>2017-08-06T07:29:46.243Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>js动态效果</title>
-    <link href="https://caijuan02.github.io/2017/07/04/animation/"/>
-    <id>https://caijuan02.github.io/2017/07/04/animation/</id>
-    <published>2017-07-04T05:21:00.000Z</published>
-    <updated>2017-07-07T08:58:16.000Z</updated>
+    <link href="https://caijuan02.github.io/2017/07/14/animation/"/>
+    <id>https://caijuan02.github.io/2017/07/14/animation/</id>
+    <published>2017-07-14T05:21:00.000Z</published>
+    <updated>2017-08-30T01:22:30.406Z</updated>
     
     <content type="html"><![CDATA[<p>自己用css或者js做的动态效果</p>
 <p><a href="https://github.com/caijuan02/animation" target="_blank" rel="external">https://github.com/caijuan02/animation</a></p>
@@ -114,10 +85,10 @@
   
   <entry>
     <title>学习前端文档</title>
-    <link href="https://caijuan02.github.io/2017/06/30/practice/"/>
-    <id>https://caijuan02.github.io/2017/06/30/practice/</id>
-    <published>2017-06-30T05:43:39.000Z</published>
-    <updated>2017-08-06T07:29:48.608Z</updated>
+    <link href="https://caijuan02.github.io/2017/07/10/practice/"/>
+    <id>https://caijuan02.github.io/2017/07/10/practice/</id>
+    <published>2017-07-10T05:43:39.000Z</published>
+    <updated>2017-08-30T01:19:59.074Z</updated>
     
     <content type="html"><![CDATA[<p>学习资料整理，主要为前端学习相关资料：包括但不限于HTML、CSS、PHP、JS、SMARTY、JQUERY、ZEPTO、LINUX、GIT、NODEJS等。<br><a id="more"></a></p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>《精通CSS：高级Web标准解决方案》</p>
@@ -149,19 +120,48 @@
   
   <entry>
     <title>My New Post</title>
-    <link href="https://caijuan02.github.io/2017/06/30/My-New-Post/"/>
-    <id>https://caijuan02.github.io/2017/06/30/My-New-Post/</id>
-    <published>2017-06-30T04:56:39.000Z</published>
-    <updated>2017-08-06T07:07:13.365Z</updated>
+    <link href="https://caijuan02.github.io/2017/07/10/My-New-Post/"/>
+    <id>https://caijuan02.github.io/2017/07/10/My-New-Post/</id>
+    <published>2017-07-10T04:56:39.000Z</published>
+    <updated>2017-08-30T01:21:46.365Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客MyBlog目录的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generete 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客MyBlog目录的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generate 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;This is my first blog，I’m really happy.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://caijuan02.github.io/2017/07/08/hello-world/"/>
+    <id>https://caijuan02.github.io/2017/07/08/hello-world/</id>
+    <published>2017-07-08T03:32:34.059Z</published>
+    <updated>2017-08-06T07:29:46.243Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;
     
     </summary>
     

@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caijuan02.github.io/2017/07/14/animation/</loc>
+    
+    <lastmod>2017-08-30T01:22:30.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caijuan02.github.io/2017/07/10/My-New-Post/</loc>
+    
+    <lastmod>2017-08-30T01:21:46.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caijuan02.github.io/2017/07/10/practice/</loc>
+    
+    <lastmod>2017-08-30T01:19:59.074Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caijuan02.github.io/2017/08/30/vue-router/</loc>
     
-    <lastmod>2017-08-30T01:14:23.976Z</lastmod>
+    <lastmod>2017-08-30T01:19:34.033Z</lastmod>
     
   </url>
   
@@ -16,30 +37,9 @@
   </url>
   
   <url>
-    <loc>https://caijuan02.github.io/2017/06/30/practice/</loc>
-    
-    <lastmod>2017-08-06T07:29:48.608Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://caijuan02.github.io/2017/07/08/hello-world/</loc>
     
     <lastmod>2017-08-06T07:29:46.243Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caijuan02.github.io/2017/06/30/My-New-Post/</loc>
-    
-    <lastmod>2017-08-06T07:07:13.365Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caijuan02.github.io/2017/07/04/animation/</loc>
-    
-    <lastmod>2017-07-07T08:58:16.000Z</lastmod>
     
   </url>
   
