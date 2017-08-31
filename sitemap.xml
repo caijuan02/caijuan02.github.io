@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caijuan02.github.io/2017/08/30/vue-router/</loc>
+    
+    <lastmod>2017-08-31T08:19:50.369Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caijuan02.github.io/2017/07/14/animation/</loc>
     
     <lastmod>2017-08-30T01:22:30.406Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://caijuan02.github.io/2017/07/10/practice/</loc>
     
     <lastmod>2017-08-30T01:19:59.074Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caijuan02.github.io/2017/08/30/vue-router/</loc>
-    
-    <lastmod>2017-08-30T01:19:34.033Z</lastmod>
     
   </url>
   
