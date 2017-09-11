@@ -5,16 +5,16 @@
   
   <title>vue-router使用 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+  <meta name="description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router使用">
 <meta property="og:url" content="https://caijuan02.github.io/2017/09/07/vue-router/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
-<meta property="og:updated_time" content="2017-09-11T12:34:04.126Z">
+<meta property="og:description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+<meta property="og:updated_time" content="2017-09-11T12:41:47.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router使用">
-<meta name="twitter:description" content="在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+<meta name="twitter:description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
   
     <link rel="alternate" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://caijuan02.github.io"></form>
@@ -89,16 +89,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在公司的一个项目中用到vue，但是之前又没有接触过vue，所以是一边学习一边用，在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装步骤按照  <a href="http://www.jianshu.com/p/1626b8643676" target="_blank" rel="external">http://www.jianshu.com/p/1626b8643676</a>  一步一步来就可以了</p>
-<h2 id="文件-目前用到的文件"><a href="#文件-目前用到的文件" class="headerlink" title="文件(目前用到的文件)"></a>文件(目前用到的文件)</h2><p>1.index,html展示页面，不需要修改<br>2.main.js挂载App使用，也不需要修改<br>3.App.vue路由渲染的总页面，可以修改全局样式，可以引入自己写的css<br>4.router目录下的index.js是用来配置路由<br>5.assets是放静态资源的，比如css、js、image<br>6.components目录文件是用来放组件的，可以是自己写的，我是把公共的头部header放在这个目录下了<br>7.page目录文件就是用来放你写的其他页面的vue文件</p>
-<h2 id="项目中遇到的问题"><a href="#项目中遇到的问题" class="headerlink" title="项目中遇到的问题"></a>项目中遇到的问题</h2><h3 id="一-路由"><a href="#一-路由" class="headerlink" title="一.路由"></a>一.路由</h3><p>1.实现路由切换<br>在index.js中引入各个部分<br>import Header(一般都是首字母大写) from ‘../components/header’<br>第一步：写公共的部分，根据我的项目来说，我把公共的头部就是导航条写在header.vue文件中，在导航条底部要用 router-view 标签来渲染其他内容到这个地方，也就是接下来除了导航条的内容你想写的内容在什么地方，就渲染在什么地方。<br>    {<br>    path:’/‘,    //默认渲染页面<br>    redirect: ‘/chat’,   //重定向，这个页面加载为chat页面，如果不这样进去的页面可能只显示头部，没有内容块<br>    components: Header,  //组件名<br>    name: ‘头部’<br>    }<br>第二步：把导航条切换的各个子页面与导航条实现路由切换，嵌套子路由<br>    {<br>        path: ‘/‘,<br>        component: Header,<br>        name: ‘设置’,<br>        children: [{<br>                path: ‘/setting’,<br>                redirect: ‘/account’, //重定向避免刚打开没点击切换页面出现空白页<br>                component: Setting,<br>                name: “Setting”<br>            }]<br>   }<br>实现路由嵌套后要在页面的元素上添加切换<br>&lt; router-link :to=”{ name: ‘Chat’, params: {}}” &gt;<br>&lt; p &gt;内容&lt; /p &gt;<br>&lt; router-link &gt;<br>如果要嵌套多个路由的话，是类似的道理，在写一层 children</p>
-<h3 id="二-小技巧"><a href="#二-小技巧" class="headerlink" title="二.小技巧"></a>二.小技巧</h3><p>1.刷新显示某一页，在App.vue文件的export.default中设置<br>created:function(){<br>    this.$router.replace(‘/chat’)<br>}<br>2.路由激活状态,在路由配置里：linkActiveClass:’active’<br>3.实现路由切换时样式改变，可以利用一个变量取不同的值来实现，<br>:class=”vueConfig.tabType === 1 ? ‘tab_item_selected’ : ‘’ “<br>4.实现数据绑定，使用v-model 文本的长度可以直接使用{ {message.length} }<br>5.可以为一个元素绑定多个事件函数，@click=”click1(),click2()”</p>
+        <p>在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
+<h3 id="一-路由"><a href="#一-路由" class="headerlink" title="一.路由"></a>一.路由</h3><p>1.实现路由切换<br>在index.js中引入各个部分<br>import Header(一般都是首字母大写) from ‘../components/header’<br>第一步：写公共的部分，根据我的项目来说，我把公共的头部就是导航条写在header.vue文件中，在导航条底部要用 router-view 标签来渲染其他内容到这个地方，也就是接下来除了导航条的内容你想写的内容在什么地方，就渲染在什么地方。<br>    {<br>    path:’/‘,    //默认渲染页面<br>    redirect: ‘/chat’,   //重定向，这个页面加载为chat页面，如果不这样进去的页面可能只显示头部，没有内容块<br>    components: Header,  //组件名<br>    name: ‘头部’<br>    }<br>第二步：把导航条切换的各个子页面与导航条实现路由切换，嵌套子路由<br>    {<br>        path: ‘/‘,<br>        component: Header,<br>        name: ‘设置’,<br>        children: [{<br>                path: ‘/setting’,<br>                redirect: ‘/account’, //重定向避免刚打开没点击切换页面出现空白页<br>                component: Setting,<br>                name: “Setting”<br>            }]<br>   }<br>实现路由嵌套后要在页面的元素上添加切换<br>&lt; router-link :to=”{ name: ‘Chat’, params: {}}” &gt;<br>&lt; p &gt;内容&lt; /p &gt;<br>&lt; router-link &gt;<br>如果要嵌套多个路由的话，是类似的道理，在写一层 children</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://caijuan02.github.io/2017/09/07/vue-router/" data-id="cj7g5ik4x0003gs6xywnho37v" class="article-share-link">Partager</a>
+      <a data-url="https://caijuan02.github.io/2017/09/07/vue-router/" data-id="cj7g5r4t200064w6xktmk1fy5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -109,8 +106,8 @@
   
   
     <a href="/2017/08/30/vue-cli/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">vue-router使用</div>
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-cli使用</div>
     </a>
   
 </nav>
@@ -142,7 +139,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -151,7 +148,7 @@
           </li>
         
           <li>
-            <a href="/2017/08/30/vue-cli/">vue-router使用</a>
+            <a href="/2017/08/30/vue-cli/">vue-cli使用</a>
           </li>
         
           <li>
@@ -179,7 +176,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 蔡娟<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
