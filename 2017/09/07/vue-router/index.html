@@ -5,16 +5,16 @@
   
   <title>vue-router使用 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+  <meta name="description" content="在使用vue-cli 时用到vue-router，但是在使用的时候遇到了一些问题，可能是一个小点，但是当时因为不了解，所以也花费了不少的时间来解决这些问题，总结了vue中路由的使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router使用">
 <meta property="og:url" content="https://caijuan02.github.io/2017/09/07/vue-router/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
-<meta property="og:updated_time" content="2017-09-11T13:44:34.665Z">
+<meta property="og:description" content="在使用vue-cli 时用到vue-router，但是在使用的时候遇到了一些问题，可能是一个小点，但是当时因为不了解，所以也花费了不少的时间来解决这些问题，总结了vue中路由的使用">
+<meta property="og:updated_time" content="2017-09-14T02:56:20.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router使用">
-<meta name="twitter:description" content="在使用vue-router时遇到了一些问题，总结了vue中路由的使用">
+<meta name="twitter:description" content="在使用vue-cli 时用到vue-router，但是在使用的时候遇到了一些问题，可能是一个小点，但是当时因为不了解，所以也花费了不少的时间来解决这些问题，总结了vue中路由的使用">
   
     <link rel="alternate" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -89,14 +89,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在使用vue-router时遇到了一些问题，总结了vue中路由的使用<br><a id="more"></a></p>
-<h3 id="实现路由切换"><a href="#实现路由切换" class="headerlink" title="实现路由切换"></a>实现路由切换</h3><p>在index.js中引入各个部分<br>import Header(一般都是首字母大写) from ‘../components/header’<br>第一步：写公共的部分，根据我的项目来说，我把公共的头部就是导航条写在header.vue文件中，在导航条底部要用 router-view 标签来渲染其他内容到这个地方，也就是接下来除了导航条的内容你想写的内容在什么地方，就渲染在什么地方。<br>    {<br>    path:’/‘,    //默认渲染页面<br>    redirect: ‘/chat’,   //重定向，这个页面加载为chat页面，如果不这样进去的页面可能只显示头部，没有内容块<br>    components: Header,  //组件名<br>    name: ‘头部’<br>    }<br>第二步：把导航条切换的各个子页面与导航条实现路由切换，嵌套子路由<br>    {<br>        path: ‘/‘,<br>        component: Header,<br>        name: ‘设置’,<br>        children: [{<br>                path: ‘/setting’,<br>                redirect: ‘/account’, //重定向避免刚打开没点击切换页面出现空白页<br>                component: Setting,<br>                name: “Setting”<br>            }]<br>   }<br>实现路由嵌套后要在页面的元素上添加切换<br>&lt; router-link :to=”{ name: ‘Chat’, params: {}}” &gt;<br>&lt; p &gt;内容&lt; /p &gt;<br>&lt; router-link &gt;<br>如果要嵌套多个路由的话，是类似的道理，在写一层 children</p>
+        <p>在使用vue-cli 时用到vue-router，但是在使用的时候遇到了一些问题，可能是一个小点，但是当时因为不了解，所以也花费了不少的时间来解决这些问题，总结了vue中路由的使用<br><a id="more"></a></p>
+<h3 id="实现路由切换"><a href="#实现路由切换" class="headerlink" title="实现路由切换"></a>实现路由切换</h3><p>在src目录下的router的index.js是用来配置路由的，在使用vue-cli构建项目的时候，已经在index.js中引入了’vue-router’，接下来就是在index.js里引入各个组件<br>例如：import Header(一般都是首字母大写) from ‘../components/header’<br>第一步：写公共的部分，根据我的项目来说，我把公共的头部就是导航条写在header.vue文件中，在导航条底部要用 router-view 标签来渲染其他内容到这个地方，也就是接下来除了导航条的内容你想写的内容在什么地方，就渲染在什么地方。<br>    {<br>    path:’/‘,    //默认渲染页面<br>    redirect: ‘/chat’,   //重定向，这个页面加载为chat页面，如果不这样进去的页面可能只显示头部，没有内容块<br>    components: Header,  //组件名<br>    name: ‘头部’<br>    }<br>第二步：把导航条切换的各个子页面与导航条实现路由切换，嵌套子路由<br>    {<br>        path: ‘/‘,<br>        component: Header,<br>        name: ‘设置’,<br>        children: [{<br>                path: ‘/setting’,<br>                redirect: ‘/account’, //重定向避免刚打开没点击切换页面出现空白页<br>                component: Setting,<br>                name: “Setting”<br>            }]<br>   }<br>实现路由嵌套后要在页面的元素上添加切换<br>&lt; router-link :to=”{ name: ‘Chat’, params: {}}” &gt;<br>&lt; p &gt;内容&lt; /p &gt;<br>&lt; router-link &gt;<br>如果要嵌套多个路由的话，是类似的道理，在写一层 children</p>
 <p>设置页面刷新时显示某一页，在App.vue文件的export.default中设置<br>created:function(){<br>    this.$router.replace(‘/chat’)<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://caijuan02.github.io/2017/09/07/vue-router/" data-id="cj7gwg99w0006uo6xw4hk2e2r" class="article-share-link">Share</a>
+      <a data-url="https://caijuan02.github.io/2017/09/07/vue-router/" data-id="cj7juu2ac0006jc6x8r22ye39" class="article-share-link">Share</a>
       
       
     </footer>
