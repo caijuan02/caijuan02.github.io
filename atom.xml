@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-09-14T05:54:23.650Z</updated>
+  <updated>2017-09-15T13:14:36.454Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-cli 与axios实现数据交互</title>
+    <link href="https://caijuan02.github.io/2017/09/15/axios/"/>
+    <id>https://caijuan02.github.io/2017/09/15/axios/</id>
+    <published>2017-09-15T05:43:39.000Z</published>
+    <updated>2017-09-15T13:14:36.454Z</updated>
+    
+    <content type="html"><![CDATA[<p>axios的使用<br><a id="more"></a></p>
+<h3 id="使用axios实现后台的数据交互"><a href="#使用axios实现后台的数据交互" class="headerlink" title="使用axios实现后台的数据交互"></a>使用axios实现后台的数据交互</h3><p>1.首先在项目文件目录下安装 axios   npm install –save axioa<br>2.在项目的main.js中引入axios   import axios from ‘axios’;<br>3.改变原型使用axios<br>axios.default.withCredentials = true;<br>Vue.prototype.$axios = axios;<br>4.在config文件的index.js配置axios<br>proxyTable: {<br>    ‘/api’: {<br>        target: ‘<a href="http://dev.njga.kefu.com:8090/" target="_blank" rel="external">http://dev.njga.kefu.com:8090/</a>‘, //设置你调用的接口域名和端口号，别忘了加http<br>        changeOrigin: true,<br>        pathRewrite: {<br>            ‘^/api’: ‘/‘ //用 ‘/app’代替target里面的地址，后面再调用接口的时候直接用api代替，比如我要调用’<a href="http://40.00.100.100:3002/user/add&#39;，直接写‘/api/user/add’即可" target="_blank" rel="external">http://40.00.100.100:3002/user/add&#39;，直接写‘/api/user/add’即可</a><br>        }<br>    }<br>}<br>5.实现请求<br>初始化请求<br>const beforeMounte = function(){<br>  console.log(‘beforeMounte’);<br>  axios.post(‘/api/clientservicecenter/clientservicecenterapi/dialog_list’,{<br>    page: ‘0’,<br>    page_size: ‘10’,<br>    cs_id: ‘100000005’<br>  }).then(function(response){<br>    console.log(response);<br>  }).catch(function(error){<br>    console.log(error);<br>  });<br>}<br>在new Vue({<br>    beforeMount: beforeMounte, //在挂载前执行<br>})</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;axios的使用&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vue-router使用</title>
