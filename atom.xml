@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-12-23T05:18:40.139Z</updated>
+  <updated>2017-12-23T05:57:50.689Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -20,15 +20,30 @@
     <link href="https://caijuan02.github.io/2017/12/10/test/"/>
     <id>https://caijuan02.github.io/2017/12/10/test/</id>
     <published>2017-12-10T04:56:39.000Z</published>
-    <updated>2017-12-23T05:18:40.139Z</updated>
+    <updated>2017-12-23T05:57:50.689Z</updated>
     
-    <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.</p>
-]]></content>
+    <content type="html"><![CDATA[<p>将hexo创建的博客内容同步到新电脑<br><a id="more"></a></p>
+<h3 id="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"><a href="#将博客同步的文件夹复制到新的电脑中，例如我的是myBlog" class="headerlink" title="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"></a>将博客同步的文件夹复制到新的电脑中，例如我的是myBlog</h3><p>安装hexo: sudo npm install -g hexo-cli<br>可以先在本地服务器中打开博客<br>hexo generate; hexo server</p>
+<h3 id="与github连接"><a href="#与github连接" class="headerlink" title="与github连接"></a>与github连接</h3><ul>
+<li>检查本地是否有ssh key设置：cd ~/.ssh</li>
+<li>生成新的ssh key：ssh-keygen -t rsa -C “joancj826@163.com”<br>-添加ssh key到github<ul>
+<li>登录github账户</li>
+<li>添加公钥 settings - SSH keys - Add SSH key</li>
+<li>复制id_rsa.pub 的公钥内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置账户"><a href="#配置账户" class="headerlink" title="配置账户"></a>配置账户</h3><ul>
+<li>是github的用户名和邮箱</li>
+<li>git config –global user.name “caijuan02” </li>
+<li>git config –global user.email “joancj826@163.com”</li>
+<li>测试ssh key 是否设置成功：ssh -T git@github.com</li>
+</ul>
+<h3 id="修改博客内容同步到github"><a href="#修改博客内容同步到github" class="headerlink" title="修改博客内容同步到github"></a>修改博客内容同步到github</h3>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;This is my first blog，I’m really happy.&lt;/p&gt;
-
+      &lt;p&gt;将hexo创建的博客内容同步到新电脑&lt;br&gt;
     
     </summary>
     
