@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-12-23T05:15:03.536Z</updated>
+  <updated>2017-12-23T05:18:40.139Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -20,16 +20,15 @@
     <link href="https://caijuan02.github.io/2017/12/10/test/"/>
     <id>https://caijuan02.github.io/2017/12/10/test/</id>
     <published>2017-12-10T04:56:39.000Z</published>
-    <updated>2017-12-23T05:15:03.536Z</updated>
+    <updated>2017-12-23T05:18:40.139Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客MyBlog目录的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generate 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;This is my first blog，I’m really happy.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick 
+
     
     </summary>
     
