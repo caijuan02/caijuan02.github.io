@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caijuan02.github.io/"/>
-  <updated>2017-12-25T09:45:55.707Z</updated>
+  <updated>2017-12-25T09:47:18.967Z</updated>
   <id>https://caijuan02.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://caijuan02.github.io/2017/10/19/fuzzy-knowledge/"/>
     <id>https://caijuan02.github.io/2017/10/19/fuzzy-knowledge/</id>
     <published>2017-10-18T16:00:00.000Z</published>
-    <updated>2017-12-25T09:45:55.707Z</updated>
+    <updated>2017-12-25T09:47:18.967Z</updated>
     
     <content type="html"><![CDATA[<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><ul>
 <li>浏览器缓存是浏览器自动缓存的<a id="more"></a></li>
@@ -85,7 +85,7 @@
     <link href="https://caijuan02.github.io/2017/10/10/test/"/>
     <id>https://caijuan02.github.io/2017/10/10/test/</id>
     <published>2017-10-10T04:56:39.000Z</published>
-    <updated>2017-12-25T09:38:36.316Z</updated>
+    <updated>2017-12-25T09:47:28.246Z</updated>
     
     <content type="html"><![CDATA[<p>将hexo创建的博客内容同步到新电脑<br><a id="more"></a></p>
 <h3 id="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"><a href="#将博客同步的文件夹复制到新的电脑中，例如我的是myBlog" class="headerlink" title="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"></a>将博客同步的文件夹复制到新的电脑中，例如我的是myBlog</h3><p>安装hexo: sudo npm install -g hexo-cli<br>可以先在本地服务器中打开博客<br>hexo generate; hexo server</p>
@@ -120,10 +120,13 @@
     <link href="https://caijuan02.github.io/2017/09/15/axios/"/>
     <id>https://caijuan02.github.io/2017/09/15/axios/</id>
     <published>2017-09-15T05:43:39.000Z</published>
-    <updated>2017-09-15T13:22:20.000Z</updated>
+    <updated>2017-12-25T09:49:10.749Z</updated>
     
     <content type="html"><![CDATA[<p>axios的使用<br><a id="more"></a></p>
-<h3 id="使用axios实现后台的数据交互"><a href="#使用axios实现后台的数据交互" class="headerlink" title="使用axios实现后台的数据交互"></a>使用axios实现后台的数据交互</h3><p>1.首先在项目文件目录下安装 axios   npm install –save axioa<br>2.在项目的main.js中引入axios   import axios from ‘axios’;<br>3.改变原型使用axios<br>axios.default.withCredentials = true;<br>Vue.prototype.$axios = axios;<br>4.在config文件的index.js配置axios<br>proxyTable: {<br>    ‘/api’: {<br>        target: ‘<a href="http://dev.njga.kefu.com:8090/" target="_blank" rel="external">http://dev.njga.kefu.com:8090/</a>‘, //设置你调用的接口域名和端口号，别忘了加http<br>        changeOrigin: true,<br>        pathRewrite: {<br>            ‘^/api’: ‘/‘ //用 ‘/app’代替target里面的地址，后面再调用接口的时候直接用api代替，比如我要调用’<a href="http://40.00.100.100:3002/user/add&#39;，直接写‘/api/user/add’即可" target="_blank" rel="external">http://40.00.100.100:3002/user/add&#39;，直接写‘/api/user/add’即可</a><br>        }<br>    }<br>}<br>5.实现请求<br>初始化请求<br>const beforeMounte = function(){<br>  console.log(‘beforeMounte’);<br>  axios.post(‘/api/clientservicecenter/clientservicecenterapi/dialog_list’,{<br>    page: ‘0’,<br>    page_size: ‘10’,<br>    cs_id: ‘100000005’<br>  }).then(function(response){<br>    console.log(response);<br>  }).catch(function(error){<br>    console.log(error);<br>  });<br>}<br>在new Vue({<br>    beforeMount: beforeMounte, //在挂载前执行<br>})</p>
+<h3 id="使用axios实现后台的数据交互"><a href="#使用axios实现后台的数据交互" class="headerlink" title="使用axios实现后台的数据交互"></a>使用axios实现后台的数据交互</h3><p>1.首先在项目文件目录下安装 axios   npm install –save axioa<br>2.在项目的main.js中引入axios   import axios from ‘axios’;<br>3.改变原型使用axios<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">axios.default.withCredentials = true;</div><div class="line">Vue.prototype.$axios = axios;</div></pre></td></tr></table></figure></p>
+<p>4.在config文件的index.js配置axios<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">    <span class="string">'/api'</span>: &#123;</div><div class="line">        target: <span class="string">'http://dev.njga.kefu.com:8090/'</span>, //设置你调用的接口域名和端口号，别忘了加http</div><div class="line">        changeOrigin: true,</div><div class="line">        pathRewrite: &#123;</div><div class="line">            <span class="string">'^/api'</span>: <span class="string">'/'</span> //用 <span class="string">'/app'</span>代替target里面的地址，后面再调用接口的时候直接用api代替，比如我要调用<span class="string">'http://40.00.100.100:3002/user/add'</span>，直接写‘/api/user/add’即可</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.实现请求<br>初始化请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">const beforeMounte = function()&#123;</div><div class="line">  console.log(<span class="string">'beforeMounte'</span>);</div><div class="line">  axios.post(<span class="string">'/api/clientservicecenter/clientservicecenterapi/dialog_list'</span>,&#123;</div><div class="line">    page: <span class="string">'0'</span>,</div><div class="line">    page_size: <span class="string">'10'</span>,</div><div class="line">    cs_id: <span class="string">'100000005'</span></div><div class="line">  &#125;).then(function(response)&#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;).catch(function(error)&#123;</div><div class="line">    console.log(error);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new Vue(&#123;</div><div class="line">	beforeMount: beforeMounte, //在挂载前执行</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -301,7 +304,7 @@
     <link href="https://caijuan02.github.io/2017/07/10/My-New-Post/"/>
     <id>https://caijuan02.github.io/2017/07/10/My-New-Post/</id>
     <published>2017-07-10T04:56:39.000Z</published>
-    <updated>2017-08-30T01:21:48.000Z</updated>
+    <updated>2017-12-25T09:47:39.347Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>1、在本地博客MyBlog目录的source/_posts 目录下修改或者添加 md 后缀的文件， 一个文件是一篇博客<br>2、打开Git bash,达到hexo网站的目录下，进入目录 cd F:   cd MyBlog<br>使用hexo generate 命令产生静态文件<br>3、hexo server,开启hexo服务器，然后到<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 预览网站效果<br>4、hexo deploy,最后同步public目录下的文件到github 上就行啦</p>
