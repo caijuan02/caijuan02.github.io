@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/07/10/My-New-Post/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
-<meta property="og:updated_time" content="2017-12-27T02:47:39.408Z">
+<meta property="og:updated_time" content="2017-12-27T02:52:06.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My New Post">
 <meta name="twitter:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
@@ -133,6 +133,27 @@
 </ol>
 <h4 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h4><ol>
 <li>注册github账号</li>
+<li><p>配置秘钥</p>
+<ul>
+<li>检查本地是否有ssh key设置：cd ~/.ssh</li>
+<li>生成新的ssh key：ssh-keygen -t rsa -C “joancj826@163.com”<br>-添加ssh key到github<ul>
+<li>登录github账户</li>
+<li>添加公钥 settings - SSH keys - Add SSH key</li>
+<li>复制id_rsa.pub 的公钥内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>配置账户</p>
+<ul>
+<li>是github的用户名和邮箱</li>
+<li>git config –global user.name “caijuan02” </li>
+<li>git config –global user.email “joancj826@163.com”</li>
+<li>测试ssh key 是否设置成功：ssh -T git@github.com</li>
+</ul>
+</li>
+<li><p>修改博客内容同步到github</p>
+</li>
 </ol>
 
       
