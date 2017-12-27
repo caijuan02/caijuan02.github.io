@@ -289,7 +289,7 @@
     <link href="https://caijuan02.github.io/2017/07/10/firstFile/"/>
     <id>https://caijuan02.github.io/2017/07/10/firstFile/</id>
     <published>2017-07-10T04:56:39.000Z</published>
-    <updated>2017-12-27T03:01:00.213Z</updated>
+    <updated>2017-12-27T03:06:25.144Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.<br>使用hexo 和 github 搭建博客</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
@@ -320,12 +320,12 @@
 <li><p>新建一篇文章</p>
 <ul>
 <li>可以直接在source/(下划线_posts)目录下创建firstFile.md文档</li>
-<li>使用命令行创建<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"firstFile"</span></div></pre></td></tr></table></figure>
+<li>使用命令行创建<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"firstFile"</span> (以下命令都是在Myblog目录下执行)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>生成网站</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate (可简写为 hexo g)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate (可简写为 hexo g 每次保存新的文章都需要执行)</div></pre></td></tr></table></figure>
 </li>
 <li><p>启动本地服务器</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server (可简写为 hexo s)</div></pre></td></tr></table></figure>
@@ -354,7 +354,8 @@
 <li>测试ssh key 是否设置成功：ssh -T git@github.com</li>
 </ul>
 </li>
-<li><p>修改博客内容同步到github</p>
+<li><p>修改博客内容部署到github</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
 </li>
 </ol>
 ]]></content>
