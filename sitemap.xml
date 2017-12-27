@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://caijuan02.github.io/2017/07/10/My-New-Post/</loc>
+    <loc>https://caijuan02.github.io/2017/10/10/test/</loc>
     
-    <lastmod>2017-12-27T02:52:06.147Z</lastmod>
+    <lastmod>2017-12-27T02:57:02.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caijuan02.github.io/2017/07/10/firstFile/</loc>
+    
+    <lastmod>2017-12-27T02:56:21.065Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://caijuan02.github.io/2017/09/15/axios/</loc>
     
     <lastmod>2017-12-25T09:50:32.529Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caijuan02.github.io/2017/10/10/test/</loc>
-    
-    <lastmod>2017-12-25T09:47:28.246Z</lastmod>
     
   </url>
   

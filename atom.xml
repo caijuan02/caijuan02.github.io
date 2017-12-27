@@ -85,7 +85,7 @@
     <link href="https://caijuan02.github.io/2017/10/10/test/"/>
     <id>https://caijuan02.github.io/2017/10/10/test/</id>
     <published>2017-10-10T04:56:39.000Z</published>
-    <updated>2017-12-25T09:47:28.246Z</updated>
+    <updated>2017-12-27T02:57:02.803Z</updated>
     
     <content type="html"><![CDATA[<p>将hexo创建的博客内容同步到新电脑<br><a id="more"></a></p>
 <h3 id="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"><a href="#将博客同步的文件夹复制到新的电脑中，例如我的是myBlog" class="headerlink" title="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"></a>将博客同步的文件夹复制到新的电脑中，例如我的是myBlog</h3><p>安装hexo: sudo npm install -g hexo-cli<br>可以先在本地服务器中打开博客<br>hexo generate; hexo server</p>
@@ -285,11 +285,11 @@
   </entry>
   
   <entry>
-    <title>My New Post</title>
-    <link href="https://caijuan02.github.io/2017/07/10/My-New-Post/"/>
-    <id>https://caijuan02.github.io/2017/07/10/My-New-Post/</id>
+    <title>搭建博客</title>
+    <link href="https://caijuan02.github.io/2017/07/10/firstFile/"/>
+    <id>https://caijuan02.github.io/2017/07/10/firstFile/</id>
     <published>2017-07-10T04:56:39.000Z</published>
-    <updated>2017-12-27T02:52:06.147Z</updated>
+    <updated>2017-12-27T02:56:21.065Z</updated>
     
     <content type="html"><![CDATA[<p>This is my first blog，I’m really happy.<br>使用hexo 和 github 搭建博客</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
