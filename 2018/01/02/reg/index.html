@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>一些模糊的知识点 | 蔡娟-爱学习的小前端</title>
+  <title>reg | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器缓存 浏览器缓存是浏览器自动缓存的">
+  <meta name="description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些模糊的知识点">
-<meta property="og:url" content="https://caijuan02.github.io/2017/10/19/fuzzy-knowledge/index.html">
+<meta property="og:title" content="reg">
+<meta property="og:url" content="https://caijuan02.github.io/2018/01/02/reg/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="浏览器缓存 浏览器缓存是浏览器自动缓存的">
-<meta property="og:updated_time" content="2018-01-02T07:07:58.959Z">
+<meta property="og:description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
+<meta property="og:updated_time" content="2018-01-02T09:32:08.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些模糊的知识点">
-<meta name="twitter:description" content="浏览器缓存 浏览器缓存是浏览器自动缓存的">
+<meta name="twitter:title" content="reg">
+<meta name="twitter:description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -151,56 +151,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-fuzzy-knowledge" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-reg" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一些模糊的知识点
+      reg
     </h1>
   
 
         
-        <a href="/2017/10/19/fuzzy-knowledge/" class="archive-article-date">
-  	<time datetime="2017-10-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
+        <a href="/2018/01/02/reg/" class="archive-article-date">
+  	<time datetime="2018-01-02T09:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><ul>
-<li>浏览器缓存是浏览器自动缓存的<a id="more"></a></li>
-<li>浏览器缓存机制是http协议的缓存机制，但是有的不是，比如html meta标签，会重新发送请求</li>
-<li>http缓存机制是由多个策略控制的，比如有Expires，类似于有一些属性来控制浏览器是否缓存，Cache-control 是比较常用的，有一些属性来告诉浏览器是否要缓存，缓存的时间等。</li>
-<li>浏览器缓存主要有</li>
-</ul>
-<ol>
-<li>cookie：主要用来记录用户信息，用户名和密码</li>
-<li>localStorage：本地缓存，没有时间限制</li>
-<li>sessionStorage：会话缓存，当打开会话时进行缓存，关闭会话缓存到期</li>
-</ol>
-<h3 id="get-和-post-的区别"><a href="#get-和-post-的区别" class="headerlink" title="get 和 post 的区别"></a>get 和 post 的区别</h3><ul>
-<li>get和post是http 请求的两种方法，本质上是没有区别的</li>
-<li>两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全</li>
-<li>get有大小限制，post没有</li>
-<li>get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，</li>
-</ul>
-<h3 id="在浏览器输入url地址到页面加载完成发生了什么事"><a href="#在浏览器输入url地址到页面加载完成发生了什么事" class="headerlink" title="在浏览器输入url地址到页面加载完成发生了什么事"></a>在浏览器输入url地址到页面加载完成发生了什么事</h3><ol>
-<li>浏览器接受url，url中包含的信息</li>
-<li>将url与缓存进行对比，判断该请求在浏览器中的缓存是否过期，如果没有过期则存储这个响应然后浏览器进行解码渲染，如果过期的话则要进行下一步判断</li>
-<li>当缓存过期时，浏览器向服务器发送请求询问资源是否真的过期，这时会用的缓存的信息，比如cache-control 如果真的过期则进行下一步</li>
-<li>看网络地址是否是ip，如果不是要进行DNS解析域名，首先会匹配本地host文件中的映射关系，然后查看本地DNS解析器缓存，然后查看本地DNS服务器</li>
-<li>浏览器向服务器进行三次握手发送http请求</li>
-<li>浏览器跟服务器建立连接后，服务器返回htpp响应</li>
-<li>浏览器接收服务器的htpp响应，根据htpp状态码做出不同的处理方式</li>
-<li>浏览器拿到html文件，进行解码，遇到js、css、图片要跟服务器发起请求</li>
-<li>浏览器渲染</li>
-<li>保持连接或者进行四次挥手关闭连接</li>
-</ol>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br><a id="more"></a></p>
+<p>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>match() 获取目标字符串中匹配正则表达式的字符，返回一个数组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.match(reg));</span><br></pre></td></tr></table></figure>
@@ -215,7 +187,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(reg, <span class="string">'hello'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>split() 按照正则表达式的规则将字符串拆分为数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.split(reg));</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.split(reg));</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -296,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2017/10/19/fuzzy-knowledge/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2018/01/02/reg/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -310,18 +283,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/02/reg/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          reg
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/10/sync/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">将博客同步到新电脑</div>
+    <a href="/2017/10/19/fuzzy-knowledge/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一些模糊的知识点</div>
       <i class="icon-circle-right"></i>
     </a>
   
