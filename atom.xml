@@ -85,13 +85,15 @@
     <link href="https://caijuan02.github.io/2017/10/10/sync/"/>
     <id>https://caijuan02.github.io/2017/10/10/sync/</id>
     <published>2017-10-10T04:56:39.000Z</published>
-    <updated>2017-12-27T03:01:58.778Z</updated>
+    <updated>2018-01-02T05:17:54.528Z</updated>
     
     <content type="html"><![CDATA[<p>将hexo创建的博客内容同步到新电脑<br><a id="more"></a></p>
 <h3 id="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"><a href="#将博客同步的文件夹复制到新的电脑中，例如我的是myBlog" class="headerlink" title="将博客同步的文件夹复制到新的电脑中，例如我的是myBlog"></a>将博客同步的文件夹复制到新的电脑中，例如我的是myBlog</h3><p>安装hexo: sudo npm install -g hexo-cli<br>可以先在本地服务器中打开博客<br>hexo generate; hexo server</p>
 <h3 id="与github连接"><a href="#与github连接" class="headerlink" title="与github连接"></a>与github连接</h3><ul>
 <li>检查本地是否有ssh key设置：cd ~/.ssh</li>
-<li>生成新的ssh key：ssh-keygen -t rsa -C “joancj826@163.com”<br>-添加ssh key到github<ul>
+<li>如果有要删除~/.ssh 目录下的文件然后添加</li>
+<li>生成新的ssh key：ssh-keygen -t rsa -C “joancj826@163.com”</li>
+<li>添加ssh key到github<ul>
 <li>登录github账户</li>
 <li>添加公钥 settings - SSH keys - Add SSH key</li>
 <li>复制id_rsa.pub 的公钥内容</li>
