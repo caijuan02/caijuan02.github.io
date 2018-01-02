@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/07/10/firstFile/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
-<meta property="og:updated_time" content="2018-01-02T07:22:05.921Z">
+<meta property="og:updated_time" content="2018-01-02T07:24:53.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建博客">
 <meta name="twitter:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
@@ -173,49 +173,26 @@
       
         <p>This is my first blog，I’m really happy.<br>使用hexo 和 github 搭建博客</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
-<h4 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h4><ol>
-<li>安装npm </li>
-</ol>
+<h4 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h4><p>1.安装npm </p>
 <ul>
 <li>npm会在安装node后自动安装，所以要先安装node</li>
 <li>Node.js安装包及源码下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></li>
 <li>安装完后检查是否安装成功：</li>
 <li>在终端输入命令：node -v  或  npm -v<br>  eg: v8.5.0 表示版本号</li>
 </ul>
-<ol>
-<li>安装hexo<br>直接使用npm安装，可以选择全局安装，执行命令<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>2.安装hexo<br>直接使用npm安装，可以选择全局安装，执行命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
 <p>检查hexo是否安装成功<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
-<h4 id="初始化博客根目录"><a href="#初始化博客根目录" class="headerlink" title="初始化博客根目录"></a>初始化博客根目录</h4><ol>
-<li><p>在本地创建一个文件夹，进入改文件目录下<br>eg:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Myblog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化改文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h4 id="初始化博客根目录"><a href="#初始化博客根目录" class="headerlink" title="初始化博客根目录"></a>初始化博客根目录</h4><p>1.在本地创建一个文件夹，进入改文件目录下<br>eg:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Myblog</span><br></pre></td></tr></table></figure></p>
+<p>2.初始化改文件夹<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
 <p>执行完以上命令，会在Myblog文件夹下生成一些文件<br>    config.yml //网站的配置信息，您可以在这里配置大部分的参数；<br>    package.json<br>    scaffolds //模板文件夹，当您在新建文章时，hexo会根据 scaffold 来简历文件；<br>    source //存放用户资源的地方，也就是你自己创建的博客文章；<br>    themes //主题文件夹。hexo会根据主题来生成静态页面。</p>
-<h4 id="创建自己的博客文章"><a href="#创建自己的博客文章" class="headerlink" title="创建自己的博客文章"></a>创建自己的博客文章</h4><ol>
-<li><p>新建一篇文章</p>
-<ul>
-<li>可以直接在source/(下划线_posts)目录下创建firstFile.md文档</li>
-<li>使用命令行创建<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"firstFile"</span> (以下命令都是在Myblog目录下执行)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>生成网站</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (可简写为 hexo g 每次保存新的文章都需要执行)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动本地服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (可简写为 hexo s)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 预览</p>
-</li>
-</ol>
-<h4 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h4><ol>
-<li>注册github账号</li>
-<li><p>配置秘钥</p>
+<h4 id="创建自己的博客文章"><a href="#创建自己的博客文章" class="headerlink" title="创建自己的博客文章"></a>创建自己的博客文章</h4><p>1.新建一篇文章</p>
+<pre><code>- 可以直接在source/(下划线_posts)目录下创建firstFile.md文档
+- 使用命令行创建
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"firstFile"</span> (以下命令都是在Myblog目录下执行)</span><br></pre></td></tr></table></figure>
+<p>2.生成网站<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (可简写为 hexo g 每次保存新的文章都需要执行)</span><br></pre></td></tr></table></figure></p>
+<p>3.启动本地服务器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (可简写为 hexo s)</span><br></pre></td></tr></table></figure></p>
+<p>4.在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 预览</p>
+<h4 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h4><p>1.注册github账号<br>2.配置秘钥</p>
 <ul>
 <li>检查本地是否有ssh key设置：cd ~/.ssh</li>
 <li>如果有需要把~/.ssh目录下的文件全部删除</li>
@@ -227,18 +204,14 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><p>配置账户</p>
+<p>3.配置账户</p>
 <ul>
 <li>是github的用户名和邮箱</li>
 <li>git config –global user.name “caijuan02” </li>
 <li>git config –global user.email “joancj826@163.com”</li>
 <li>测试ssh key 是否设置成功：ssh -T git@github.com</li>
 </ul>
-</li>
-<li><p>修改博客内容部署到github</p>
-</li>
-</ol>
+<p>4.修改博客内容部署到github</p>
 <ul>
 <li>在github下新建一个库 Create a new repository  用来放博客的内容我的是：caijuan02.github.io</li>
 <li><p>修改根目录下的_config.yml</p>
