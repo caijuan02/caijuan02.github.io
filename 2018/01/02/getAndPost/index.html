@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>正则表达式 | 蔡娟-爱学习的小前端</title>
+  <title>get 和 post | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
+  <meta name="description" content="get 和 post 的区别 get和post是http 请求的两种方法，本质上是没有区别的 两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全 get有大小限制，post没有 get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="https://caijuan02.github.io/2018/01/02/reg/index.html">
+<meta property="og:title" content="get 和 post">
+<meta property="og:url" content="https://caijuan02.github.io/2018/01/02/getAndPost/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
-<meta property="og:updated_time" content="2018-01-02T09:35:37.294Z">
+<meta property="og:description" content="get 和 post 的区别 get和post是http 请求的两种方法，本质上是没有区别的 两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全 get有大小限制，post没有 get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，">
+<meta property="og:updated_time" content="2018-01-02T09:36:23.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="正则表达式正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
+<meta name="twitter:title" content="get 和 post">
+<meta name="twitter:description" content="get 和 post 的区别 get和post是http 请求的两种方法，本质上是没有区别的 两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全 get有大小限制，post没有 get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -151,44 +151,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-reg" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-getAndPost" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      正则表达式
+      get 和 post
     </h1>
   
 
         
-        <a href="/2018/01/02/reg/" class="archive-article-date">
-  	<time datetime="2018-01-02T09:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+        <a href="/2018/01/02/getAndPost/" class="archive-article-date">
+  	<time datetime="2018-01-02T09:35:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br><a id="more"></a></p>
-<p>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>match() 获取目标字符串中匹配正则表达式的字符，返回一个数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.match(reg));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>test() 判断目标字符串中是否存在匹配正则表达式的字符，返回boolean ，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(reg.test(str));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>search() 查找目标字符串中匹配正则表达式的第一个子元素的index位置，有则返回index值，没有返回-1</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.search(reg));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>replace() 将目标字符串中匹配正则表达式的子元素替换为新的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(reg, <span class="string">'hello'</span>));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>split() 按照正则表达式的规则将字符串拆分为数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.split(reg));</span><br></pre></td></tr></table></figure>
-</li>
+        <h3 id="get-和-post-的区别"><a href="#get-和-post-的区别" class="headerlink" title="get 和 post 的区别"></a>get 和 post 的区别</h3><ul>
+<li>get和post是http 请求的两种方法，本质上是没有区别的</li>
+<li>两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全</li>
+<li>get有大小限制，post没有</li>
+<li>get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，</li>
 </ul>
 
       
@@ -269,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2018/01/02/reg/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2018/01/02/getAndPost/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/02/getAndPost/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          get 和 post
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/19/fuzzy-knowledge/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一些模糊的知识点</div>
+    <a href="/2018/01/02/reg/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式</div>
       <i class="icon-circle-right"></i>
     </a>
   
