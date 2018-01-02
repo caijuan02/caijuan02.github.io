@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/10/19/fuzzy-knowledge/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="浏览器缓存 浏览器缓存是浏览器自动缓存的">
-<meta property="og:updated_time" content="2017-12-25T09:47:18.967Z">
+<meta property="og:updated_time" content="2018-01-02T07:06:57.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些模糊的知识点">
 <meta name="twitter:description" content="浏览器缓存 浏览器缓存是浏览器自动缓存的">
@@ -200,22 +200,22 @@
 <li>浏览器渲染</li>
 <li>保持连接或者进行四次挥手关闭连接</li>
 </ol>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</div><div class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</div></pre></td></tr></table></figure></p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>match() 获取目标字符串中匹配正则表达式的字符，返回一个数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(str.match(reg));</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.match(reg));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>test() 判断目标字符串中是否存在匹配正则表达式的字符，返回boolean ，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(reg.test(str));</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(reg.test(str));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>search() 查找目标字符串中匹配正则表达式的第一个子元素的index位置，有则返回index值，没有返回-1</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(str.search(reg));</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.search(reg));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>replace() 将目标字符串中匹配正则表达式的子元素替换为新的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(str.replace(reg, <span class="string">'hello'</span>));</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(reg, <span class="string">'hello'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>split() 按照正则表达式的规则将字符串拆分为数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(str.split(reg));</div></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.split(reg));</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
