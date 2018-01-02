@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/08/25/vue/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用">
-<meta property="og:updated_time" content="2018-01-02T08:10:05.574Z">
+<meta property="og:updated_time" content="2018-01-02T08:28:55.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue的使用">
 <meta name="twitter:description" content="本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用">
@@ -188,6 +188,15 @@
 <li>在js中编写代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">	// 将id为app的元素创建为一个Vue实例，就可以在该元素里使用vue，在元素外使用vue会报错</span><br><span class="line">	el: <span class="string">'#app'</span>,</span><br><span class="line">	// 数据</span><br><span class="line">	data: &#123;</span><br><span class="line">		message: <span class="string">''</span></span><br><span class="line">	&#125;,</span><br><span class="line">	// 计算属性</span><br><span class="line">	computed: &#123;</span><br><span class="line">		// 计算属性的 getter</span><br><span class="line">		messageNum: function () &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">200</span> - this.message.length;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 方法</span><br><span class="line">	methods: &#123;</span><br><span class="line">		// 发表评论</span><br><span class="line">		published: function()&#123;</span><br><span class="line">			console.log(this.message);</span><br><span class="line">		&#125;,</span><br><span class="line">		// 初始化数据</span><br><span class="line">		initDate: function()&#123;</span><br><span class="line">			console.log(<span class="string">'请求接口'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// vue生命周期，实例在生成后执行，可以用来初始化数据</span><br><span class="line">	created: function()&#123;</span><br><span class="line">		this.initDate()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><ul>
+<li><p>使用data数据<br>在html中使用data里的数据：<br>eg：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&#123;&#123;message&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用指令<br>常用的指令有</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">v-model:数据双向绑定</span><br><span class="line">v-<span class="keyword">if</span>:条件渲染</span><br><span class="line">v-<span class="keyword">for</span>:列表渲染</span><br><span class="line">v-bind:属性的值是动态的要使用 eg：v-bind:src=<span class="string">''</span> 可缩写为 :src</span><br><span class="line">v-on:监听事件 可缩写为 @click=<span class="string">"函数名()"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>用法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-if="message"&gt;&#123;&#123;message&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
 
       
 
