@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/02/26/responsiveDesign/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小">
-<meta property="og:updated_time" content="2018-02-26T07:33:18.311Z">
+<meta property="og:updated_time" content="2018-02-26T07:49:54.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计">
 <meta name="twitter:description" content="响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小">
@@ -166,6 +166,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小<br><a id="more"></a><br>之前只是简单的了解了一下响应式设计的原理，但是没有实践，在智家官网这个项目中才真正的学习到了响应式设计的精髓，官网地址：<a href="http://jia.qq.com/smart-website/index.html" target="_blank" rel="noopener">http://jia.qq.com/smart-website/index.html</a></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>页面的设计与开发应当根据用户行为以及设备环境(系统平台、屏幕尺寸、屏幕定向等)进行相应的响应和调整。</p>
+<h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><p>响应式设计在屏幕大小改变的时候要把最重要的内容放在最醒目的地方，一般会写多套样式，可以用到media query来实现<br>另一种方法就是用js来实现在不同屏幕下使用某一套样式，将元素的大小和间距设为原来的百分比，在实现响应式的同时针对某一部分可能会用到不同的解决方案，有百分比，有em，有的不需要改变</p>
+<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><ol>
+<li>一些在不同屏幕下都可以展示的元素就可以不需要有多套样式</li>
+<li>如果位于中线两边的元素可以根据中线布局，这样在屏幕缩放的过程中还是在中间而不是向两边居中</li>
+<li>一个大块里面的内容可以把子元素看为单个的元素根据父元素布局，这样在缩放的过程中可以只改变父元素的位置</li>
+</ol>
 
       
 
