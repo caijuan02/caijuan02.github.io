@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
   <title>响应式设计 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小">
+  <meta name="description" content="响应式网站设计是一种网络页面设计布局，其理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境进行相对应的布局，就是按照一定的规则让网页适配不同屏幕或窗口的大小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="响应式设计">
 <meta property="og:url" content="https://caijuan02.github.io/2018/02/26/responsiveDesign/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小">
-<meta property="og:updated_time" content="2018-02-26T07:56:48.683Z">
+<meta property="og:description" content="响应式网站设计是一种网络页面设计布局，其理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境进行相对应的布局，就是按照一定的规则让网页适配不同屏幕或窗口的大小">
+<meta property="og:updated_time" content="2018-03-08T06:15:34.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计">
-<meta name="twitter:description" content="响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小">
+<meta name="twitter:description" content="响应式网站设计是一种网络页面设计布局，其理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境进行相对应的布局，就是按照一定的规则让网页适配不同屏幕或窗口的大小">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -165,13 +165,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>响应式设计是按照一定的规则让网页适配不同屏幕或窗口的大小<br><a id="more"></a><br>之前只是简单的了解了一下响应式设计的原理，但是没有实践，在智家官网这个项目中才真正的学习到了响应式设计的精髓，官网地址：<a href="http://jia.qq.com/smart-website/index.html" target="_blank" rel="noopener">http://jia.qq.com/smart-website/index.html</a></p>
+        <p>响应式网站设计是一种网络页面设计布局，其理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境进行相对应的布局，就是按照一定的规则让网页适配不同屏幕或窗口的大小<br><a id="more"></a><br>之前只是简单的了解了一下响应式设计的原理，但是没有实践，在智家官网这个项目中才真正的学习到了响应式设计的精髓，智家官网地址：<a href="http://jia.qq.com" target="_blank" rel="noopener">http://jia.qq.com</a></p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>页面的设计与开发应当根据用户行为以及设备环境(系统平台、屏幕尺寸、屏幕定向等)进行相应的响应和调整。</p>
 <h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><p>响应式设计在屏幕大小改变的时候要把最重要的内容放在最醒目的地方，一般会写多套样式，</p>
 <ol>
-<li>可以用到media query来实现</li>
+<li>采用CSS的media query技术（针对有限几种设定的屏幕尺寸）</li>
 <li>使用框架，例如Bootstrap</li>
 <li>另一种方法就是用js来实现在不同屏幕下使用某一套样式，将元素的大小和间距设为原来的百分比</li>
+</ol>
+<h3 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h3><ol>
+<li>可伸缩的内容区块：内容区块在一定程度上能够自动调整，一确保填满整个页面</li>
+<li>可自由排布的内容区块：当页面尺寸变动较大时，能够减少/增加排布的列数</li>
+<li>适应页面尺寸的边距：当页面尺寸发生更大变化时，区块的边距也应该变化</li>
+<li>能够适应比例变化的图片：对于常见的宽度调整，图片在隐藏两边内容时，依旧保持美观可用</li>
+<li>能够自动隐藏/部分显示的内容：如在大屏幕电脑上显示大段的描述文本，在小屏幕或者手机上只能少量显示或全部隐藏</li>
+<li>能自动折叠的导航和菜单：展开还是收起，应该根据页面尺寸来判断</li>
+<li>灵活使用尺寸单位：px rem</li>
 </ol>
 <h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><ol>
 <li>一些在不同屏幕下都可以展示的元素就可以不需要有多套样式</li>
