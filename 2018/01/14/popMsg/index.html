@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>蔡娟-爱学习的小前端</title>
+  <title>自定义弹窗提示 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="蔡娟-爱学习的小前端">
-<meta property="og:url" content="https://caijuan02.github.io/page/2/index.html">
+  <meta name="description" content="自定义弹窗提示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义弹窗提示">
+<meta property="og:url" content="https://caijuan02.github.io/2018/01/14/popMsg/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
+<meta property="og:description" content="自定义弹窗提示">
+<meta property="og:updated_time" content="2018-03-16T03:27:18.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蔡娟-爱学习的小前端">
+<meta name="twitter:title" content="自定义弹窗提示">
+<meta name="twitter:description" content="自定义弹窗提示">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -141,33 +145,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-browserCache" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-popMsg" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/browserCache/">浏览器缓存</a>
+    <h1 class="article-title" itemprop="name">
+      自定义弹窗提示
     </h1>
   
 
         
-        <a href="/2018/01/02/browserCache/" class="archive-article-date">
-  	<time datetime="2018-01-02T09:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+        <a href="/2018/01/14/popMsg/" class="archive-article-date">
+  	<time datetime="2018-01-14T03:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>浏览器缓存是浏览器自动缓存的
-        
-          <a class="article-more-a" href="/2018/01/02/browserCache/#more">more >></a>
-        
+        <p>自定义弹窗提示<br><a id="more"></a></p>
+<h3 id="比较适用于移动端，H5页面"><a href="#比较适用于移动端，H5页面" class="headerlink" title="比较适用于移动端，H5页面"></a>比较适用于移动端，H5页面</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 错误弹出层</span><br><span class="line">* @param  &#123;string&#125; msg  错误提示</span><br><span class="line">* @param  &#123;int&#125; time 几秒后退出，<span class="number">1000</span> 等于<span class="number">1</span>秒</span><br><span class="line">* @<span class="keyword">return</span> &#123;[type]&#125;      [description]</span><br><span class="line">*/</span><br><span class="line">function popMsg(msg,time)&#123;</span><br><span class="line">	// var w = $(window).width();</span><br><span class="line">	var h = $(window).height();</span><br><span class="line">	<span class="keyword">if</span>($(<span class="string">".msg20151118"</span>))&#123;</span><br><span class="line">		$(<span class="string">".msg20151118"</span>).remove();</span><br><span class="line">	&#125;</span><br><span class="line">	var $box = $(<span class="string">"&lt;div class='msg20151118' style='display:inline-block;'&gt;&lt;/div&gt;"</span>);</span><br><span class="line">	$box.css(&#123;</span><br><span class="line">		<span class="string">"background"</span> : <span class="string">"rgba(0,0,0,.6)"</span>,</span><br><span class="line">		<span class="string">"padding"</span> : <span class="string">"10px"</span>,</span><br><span class="line">		<span class="string">"padding-left"</span> : <span class="string">"20px"</span>,</span><br><span class="line">		<span class="string">"padding-right"</span> : <span class="string">"20px"</span>,</span><br><span class="line">		<span class="string">"line-height"</span> : <span class="string">"24px"</span>,</span><br><span class="line">		<span class="string">"font-size"</span> : <span class="string">"14px"</span>,</span><br><span class="line">		<span class="string">"text-align"</span> : <span class="string">"center"</span>,</span><br><span class="line">		<span class="string">"border-radius"</span> : <span class="string">"10px"</span>,</span><br><span class="line">		<span class="string">"color"</span> : <span class="string">"#fff"</span>,</span><br><span class="line">		<span class="string">"left"</span>: <span class="string">"50%"</span>,</span><br><span class="line">		<span class="string">'z-index'</span> : <span class="number">1000</span></span><br><span class="line">	&#125;)</span><br><span class="line">	$box.text(msg)</span><br><span class="line">	$(<span class="string">"body"</span>).append($box);</span><br><span class="line">	var width = $(<span class="string">".msg20151118"</span>).width();</span><br><span class="line">	var height = $(<span class="string">".msg20151118"</span>).height();</span><br><span class="line">	var w = $box.width();</span><br><span class="line">	w = (w+<span class="number">40</span>)/<span class="number">2</span>;</span><br><span class="line">	h = (h-height)/<span class="number">2</span>;</span><br><span class="line">	$box.css(&#123;</span><br><span class="line">		<span class="string">"position"</span> : <span class="string">"fixed"</span>,</span><br><span class="line">		<span class="string">"top"</span> : h,</span><br><span class="line">		<span class="string">"margin-left"</span> : -w</span><br><span class="line">	&#125;)</span><br><span class="line">	setTimeout(function()&#123;</span><br><span class="line">		$box.remove();</span><br><span class="line">	&#125;,time || <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 调用 --&gt;</span><br><span class="line">popMsg(<span class="string">'hello'</span>);</span><br></pre></td></tr></table></figure>
       
 
       
@@ -178,16 +177,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/02/browserCache/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2018/01/14/popMsg/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/01/20/smallRoutine/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          小程序的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/05/copy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">copy</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -207,340 +274,14 @@
 
 
 
-
-  
-    <article id="post-getAndPost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/09/getAndPost/">get 和 post</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/09/getAndPost/" class="archive-article-date">
-  	<time datetime="2017-11-09T09:35:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>get和post是http 请求的两种方法，本质上是没有区别的</li>
-<li>两种不同的方式，当然会有不同，get会把参数存到url中，post不会，所以post相对比较安全</li>
-<li>get有大小限制，post没有</li>
-<li>get请求会被浏览器主动cache，参数会保留在历史记录里，而post不会，</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/09/getAndPost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-reg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/15/reg/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/15/reg/" class="archive-article-date">
-  	<time datetime="2017-10-15T09:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br>
-        
-          <a class="article-more-a" href="/2017/10/15/reg/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/15/reg/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sync" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/10/sync/">将博客同步到新电脑</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/10/sync/" class="archive-article-date">
-  	<time datetime="2017-10-10T04:56:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>将hexo创建的博客内容同步到新电脑<br>
-        
-          <a class="article-more-a" href="/2017/10/10/sync/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/10/sync/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-axios" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/15/axios/">vue-cli 与axios实现数据交互</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/15/axios/" class="archive-article-date">
-  	<time datetime="2017-09-15T12:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>axios的使用<br>
-        
-          <a class="article-more-a" href="/2017/09/15/axios/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/15/axios/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/07/vue-router/">vue-router使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/07/vue-router/" class="archive-article-date">
-  	<time datetime="2017-09-07T12:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在使用vue-cli 时用到vue-router，但是在使用的时候遇到了一些问题，可能是一个小点，但是当时因为不了解，所以也花费了不少的时间来解决这些问题，总结了vue中路由的使用<br>
-        
-          <a class="article-more-a" href="/2017/09/07/vue-router/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/07/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -563,8 +304,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
