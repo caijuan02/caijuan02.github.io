@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/01/02/browserCache/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="浏览器缓存是浏览器自动缓存的">
-<meta property="og:updated_time" content="2018-01-02T09:40:42.255Z">
+<meta property="og:updated_time" content="2018-06-19T01:40:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器缓存">
 <meta name="twitter:description" content="浏览器缓存是浏览器自动缓存的">
@@ -176,7 +176,7 @@
 <li>localStorage：本地缓存，没有时间限制</li>
 <li>sessionStorage：会话缓存，当打开会话时进行缓存，关闭会话缓存到期</li>
 </ol>
-
+<h3 id="设置session"><a href="#设置session" class="headerlink" title="设置session"></a>设置session</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">setSession() &#123;</span><br><span class="line">	var that = this;</span><br><span class="line">	<span class="keyword">if</span> (sessionStorage.opened) &#123;</span><br><span class="line">		console.log(<span class="string">'窗口是刷新页面,不是新打开'</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		console.log(<span class="string">'窗口是新打开'</span>)</span><br><span class="line">		X.disableBodyScroll(true, false);</span><br><span class="line">		$(<span class="string">'.platform-detail-box'</span>).show();     </span><br><span class="line">		that.initPlatformSwiper();</span><br><span class="line">		//如果获取到历史url,则重定向到历史地址    </span><br><span class="line">		<span class="keyword">if</span> (localStorage.history &amp;&amp; localStorage.history != window.location.href) &#123;</span><br><span class="line">		window.location.replace(localStorage.history);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sessionStorage.setItem(<span class="string">'opened'</span>, <span class="string">'true'</span>);</span><br><span class="line">	localStorage.setItem(<span class="string">'history'</span>, location.href);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
