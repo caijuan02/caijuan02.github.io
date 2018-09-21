@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/09/21/npmStudy/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="npm的简单介绍和自己发布npm包">
-<meta property="og:updated_time" content="2018-09-21T02:13:06.000Z">
+<meta property="og:updated_time" content="2018-09-21T05:23:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npmStudy">
 <meta name="twitter:description" content="npm的简单介绍和自己发布npm包">
@@ -166,7 +166,106 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>npm的简单介绍和自己发布npm包<br><a id="more"></a></p>
-<h3 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h3>
+<h3 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h3><ul>
+<li>NPM作为Node的模块管理和发布工具，即使不做node开发，也是有必要学习npm的。npm是开源，你可以使用别人开发的npm包，也可以自己发布npm包，方便在不同的项目中使用，便于团队开发。</li>
+<li>nodejs以包的形式组织程序模块，包的定义很简单：包含文件内容符合规范package.json文件的目录或归档文件，就是init的package.json文件和自己写的js文件</li>
+</ul>
+<h3 id="灵魂：package-json"><a href="#灵魂：package-json" class="headerlink" title="灵魂：package.json"></a>灵魂：package.json</h3><!-- ppackage.json的介绍包括在自己发布npm包init的时候需要填写的参数 -->
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="comment"># npm包的名字</span></span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"my-tools"</span>,  </span><br><span class="line">	<span class="comment"># npm包的版本号</span></span><br><span class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="comment"># 依赖的插件名和版本号</span></span><br><span class="line">	<span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">		<span class="string">"gulp"</span>: <span class="string">"github:gulpjs/gulp#4.0"</span>,</span><br><span class="line">		<span class="string">"iscroll"</span>: <span class="string">"^5.2.0"</span>,</span><br><span class="line">    	<span class="string">"jquery"</span>: <span class="string">"^3.1.1"</span>,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>包的定义和NPM都围绕着package.json文件做文章，package.jaon用于存放模块的名称、版本、作者、模块入口、依赖项等信息。<br><!-- 初始化 --><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></p>
+<p>在需要的目录下执行创建一个全新的package.json文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm help json</span><br></pre></td></tr></table></figure></p>
+<p>打开帮助文档，根据实际的项目需求自行初始化package.json的项目</p>
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><ul>
+<li>name:必选项，表示模块名称。命名时不能包含js、node、和url中需要转义的字符，不能以.和_为开头</li>
+<li>version:必选项，表示模块的版本号。版本号以主版本号.副版本号.补丁版本号 构成(如1.0.1)</li>
+<li>main: 必选项，模块入口文件相对路径（相对于模块根目录）。自己创建的npm包的js文件路径</li>
+<li>description:可选项，表示模块功能描述，显示在 npm search “package-name” 中</li>
+<li>keywords:可选项，数组类型，表示模块的关键字，显示在 npm search “package-name” 中</li>
+<li>author:可选项，表示发起者信息</li>
+<li><p>engines:可选项，依赖的node版本， 示例如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"engines"</span>: &#123;</span><br><span class="line">		<span class="string">"node"</span>: <span class="string">"&gt;=0.8.0"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>respository:可选项，源码托管地址，示例如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"repository"</span>:&#123;</span><br><span class="line">		<span class="string">"type"</span>: <span class="string">"git"</span>,</span><br><span class="line">		<span class="string">"url"</span>: <span class="string">"git+xxx.git"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scripts:可选项，自定义在cli中输入<br>npm “scripts”时实际执行的程序。npm默认提供大量的script供我们调用</p>
+</li>
+<li>dependencies、devDependencies:可选项，用于配置模块的生产环境依赖包和开发环境依赖包。当执行npm install时，npm会根据这两个配置项的值去下载安装相关的依赖包。<br>两者的区别是devDependencies是模块开发过程的依赖包（如：gulp只在开发时有用的模块），并且当其他模块需要依赖当前模块时，当通过npm install “package-name”时会自动下载安装dependencies的包而不会下载devDependencies的包。</li>
+</ul>
+<h3 id="查找、安装、卸载、更新依赖包"><a href="#查找、安装、卸载、更新依赖包" class="headerlink" title="查找、安装、卸载、更新依赖包"></a>查找、安装、卸载、更新依赖包</h3><p>包的作用范围分为 全局 和 本地 两种</p>
+<h4 id="包的种类"><a href="#包的种类" class="headerlink" title="包的种类"></a>包的种类</h4><ul>
+<li><p>全局包<br>用作在cli上直接调用，而无法在项目中通过require导入依赖包。如将gulp安装到全局时，则可在cli中输入gulp调用了(gulp的知识自行学习)<br>npm install -g gulp<br>cmd或shell中直接调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地包<br>用作在项目中通过require导入依赖包，供项目使用。</p>
+</li>
+<li>全局和本地的依赖包是存放在哪里呢,通过<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm root -g   </span><br><span class="line">/Users/caijuan/.nvm/versions/node/v8<span class="number">.9</span><span class="number">.4</span>/lib/node_modules</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm root</span><br><span class="line">/Users/caijuan/work/git/youpin/dp-techan-yn/node_modules</span><br></pre></td></tr></table></figure>
+<p>可分别查看全局和本地的依赖包下载安装的绝对目录了，本地的依赖包会存放在当前根目录下的node_modules目录下</p>
+<h4 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h4><ul>
+<li><p>全局</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样会安装最新版的包，若需要安装特定版本，需要<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="string">"package-name"</span>@<span class="string">"version"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h4><ul>
+<li><p>卸载全局</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>卸载本地</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="更新包"><a href="#更新包" class="headerlink" title="更新包"></a>更新包</h4><ul>
+<li><p>更新全局</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新本地</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update <span class="string">"package-name"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="发布包"><a href="#发布包" class="headerlink" title="发布包"></a>发布包</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>账号：要发布到npm，需要一个npm账号，在<a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a> 中申请即可<ul>
+<li>包的名字不能重复</li>
+<li>一旦发布，24小时就不能删除，名字就唯一</li>
+</ul>
+</li>
+<li>知道nodejs是什么</li>
+<li>了解es6 import 和 exports，知道js的对象结构</li>
+</ul>
+<h4 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h4><h4 id="创建自己的包"><a href="#创建自己的包" class="headerlink" title="创建自己的包"></a>创建自己的包</h4><ul>
+<li>目录结构<br>创建一个文件夹，里面写入自己的js文件，使用<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>初始化生成package.json文件，这个时候需要输入一些参数，代表含义可以参考上面介绍</p>
+<ul>
+<li>开发一个简单的hello程序<br>a.js<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function hello(name)&#123;</span><br><span class="line">  console.log(<span class="string">"hello "</span>+ name);</span><br><span class="line">&#125;</span><br><span class="line">exports.hello=hello;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里的a.js就是入口文件，需要在package.json里修改<br>b.js使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var h = require(<span class="string">'./a'</span>);</span><br><span class="line">h.hello(<span class="string">'caijuan'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><ul>
+<li><p>添加用户，填入自己的npm账户、密码和邮箱</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm adduser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布npm包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="readme"><a href="#readme" class="headerlink" title="readme"></a>readme</h4><p>在根目录下添加README.md文档，里面写入一些提示即可</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li><p>安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i cj02</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用<br>如果是用es6语法的话</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Cj <span class="keyword">from</span> <span class="string">"cj02"</span>;</span><br><span class="line">Cj.hello(<span class="string">'caijuan'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
 
       
