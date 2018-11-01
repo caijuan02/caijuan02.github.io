@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/11/01/es6Study/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="es6的学习">
-<meta property="og:updated_time" content="2018-11-01T07:19:21.000Z">
+<meta property="og:updated_time" content="2018-11-01T10:40:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6Study">
 <meta name="twitter:description" content="es6的学习">
@@ -203,7 +203,7 @@
 <p>3 const 的作用域和 let一样，只在声明所在的块级作用域有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">1</span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(max);  <span class="comment">// ReferenceError: max is not defined</span></span><br></pre></td></tr></table></figure></p>
 <p>4 const 命令声明的变量也是不能提升的，同样存在暂时性死区，只能在声明的位置后面使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(min);   <span class="comment">// ReferenceError: min is not defined</span></span><br><span class="line"><span class="keyword">const</span> min = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <p>5 const 声明的常量，和let一样不能重复声明<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">'cj'</span>;</span><br><span class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="string">'xjj'</span>;    <span class="comment">// SyntaxError: Identifier 'message' has already been declared</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">21</span>;           <span class="comment">// SyntaxError: Identifier 'age' has already been declared</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="持续更新中……"></a>持续更新中……</h3>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><h3 id="玩命更新中……"><a href="#玩命更新中……" class="headerlink" title="玩命更新中……"></a>玩命更新中……</h3>
       
 
       
