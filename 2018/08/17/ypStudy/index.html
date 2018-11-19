@@ -65,9 +65,11 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">true</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">智能菜单</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -251,6 +253,25 @@
 </article>
 
   
+    <div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	import 'gitment/style/default.css'
+	import Gitment from 'gitment'
+	var gitment = new Gitment({
+		id: 'Fri Aug 17 2018 11:48:19 GMT+0800',
+		owner: "caijuan02",
+		repo: "https://github.com/caijuan02/github.gitment.git",
+		oauth: {
+			client_id: "5a87ab0483c8702b805e",
+			client_secret: "37516fe6c8d1c8d4f8ac4689dee9bd804b549232",
+		}
+	})
+	gitment.render('git')
+</script>
+    
+  
 <nav id="article-nav">
   
     <a href="/2018/09/21/npmStudy/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -284,56 +305,28 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Page-Visibility-监听页面是否处于激活-可见-状态"><span class="toc-number">1.</span> <span class="toc-text">使用Page Visibility 监听页面是否处于激活(可见)状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue使用echarts"><span class="toc-number">2.</span> <span class="toc-text">vue使用echarts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用PinchZoom实现swiper轮播图片的两指缩放"><span class="toc-number">3.</span> <span class="toc-text">使用PinchZoom实现swiper轮播图片的两指缩放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下拉刷新，展示json文件的动画"><span class="toc-number">4.</span> <span class="toc-text">下拉刷新，展示json文件的动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小知识"><span class="toc-number">5.</span> <span class="toc-text">小知识</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ypStudy" data-title="ypStudy" data-url="https://caijuan02.github.io/2018/08/17/ypStudy/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
   
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "https://caijuan02.github.io/2018/08/17/ypStudy/", 
-    sourceId: "ypStudy",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-  
-  <div id="SOHUCS" sid="ypStudy" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "true",
-        conf: "true"
-    });
-</script>
-</script>
   
 
   
@@ -356,6 +349,16 @@
     </div>
   </div>
 </footer>
+<!-- <div class="footer-left"> -->
+	<!-- # PV方式，单个用户连续点击 n 篇，记录 n 次记录值 -->
+	<!-- <span id="busuanzi_container_site_pv"> 本站总访问量 -->
+		<!-- <span id="busuanzi_value_site_pv"></span>次</span> -->
+<!-- </div> -->
+<!-- <div class="footer-right"> -->
+	<!-- # UV方式，单个用户连续点击 n 篇，记录 1 次记录值 -->
+	<!-- <span id="busuanzi_container_site_uv"> 本站访客数 -->
+		<!-- <span id="busuanzi_value_site_uv"></span>人次</span> -->
+<!-- </div> -->
     </div>
     <script>
 	var yiliaConfig = {
@@ -389,6 +392,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
     
@@ -398,9 +403,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">true</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">智能菜单</a></li>
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
       
         
       
@@ -465,6 +472,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://www.npmjs.com/package/cj-projects" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我发布的npm包</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://piappcn.github.io/archives/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>海哥博客</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     

@@ -61,9 +61,11 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">true</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">智能菜单</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -257,6 +259,16 @@
     </div>
   </div>
 </footer>
+<!-- <div class="footer-left"> -->
+	<!-- # PV方式，单个用户连续点击 n 篇，记录 n 次记录值 -->
+	<!-- <span id="busuanzi_container_site_pv"> 本站总访问量 -->
+		<!-- <span id="busuanzi_value_site_pv"></span>次</span> -->
+<!-- </div> -->
+<!-- <div class="footer-right"> -->
+	<!-- # UV方式，单个用户连续点击 n 篇，记录 1 次记录值 -->
+	<!-- <span id="busuanzi_container_site_uv"> 本站访客数 -->
+		<!-- <span id="busuanzi_value_site_uv"></span>人次</span> -->
+<!-- </div> -->
     </div>
     <script>
 	var yiliaConfig = {
@@ -290,6 +302,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
     
@@ -299,9 +313,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">true</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">智能菜单</a></li>
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
       
         
       
@@ -366,6 +382,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://www.npmjs.com/package/cj-projects" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我发布的npm包</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://piappcn.github.io/archives/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>海哥博客</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
