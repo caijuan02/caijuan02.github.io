@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/01/05/copy/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="实现复制文本到剪切板">
-<meta property="og:updated_time" content="2018-01-05T11:12:24.275Z">
+<meta property="og:updated_time" content="2018-11-19T03:56:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="copy">
 <meta name="twitter:description" content="实现复制文本到剪切板">
@@ -167,11 +167,14 @@
       
         <p>实现复制文本到剪切板<br><a id="more"></a><br>使用clipboard.js</p>
 <h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ul>
-<li>下载clipboard.js</li>
-<li>在html中引入</li>
+<li>下载clipboard.js<br>  地址：<a href="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.js" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.js</a></li>
+<li>在html中引入  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.js"></script>
+
+
+</li>
 </ul>
-<h3 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h3><p>因为我用的是vue的语法，实现是一样的<br>@click是vue里的点击事件，触发copyWx 方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class="btn" :data-clipboard-text="items.content" @click="copyWx()"&gt;复制&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置都在copyWx的方法里实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">copyWx: function() &#123;</span><br><span class="line">	let clipboard = new Clipboard(<span class="string">'.btn'</span>);  //实例对象</span><br><span class="line">	clipboard.on(<span class="string">'success'</span>, function(e) &#123;   //复制成功时执行</span><br><span class="line">		e.clearSelection();</span><br><span class="line">	&#125;);</span><br><span class="line">	clipboard.on(<span class="string">'error'</span>, function(e) &#123;    //复制失败时执行</span><br><span class="line">		console.error(<span class="string">'Action:'</span>, e.action);</span><br><span class="line">		console.error(<span class="string">'Trigger:'</span>, e.trigger);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h3><p>这里使用的是vue的语法，实现是一样的，为实现复制的按钮添加事件<br>@click是vue里的点击事件，触发copyWx 方法<br>:data-clipboard-text 是触发要复制的内容<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">:data-clipboard-text</span>=<span class="string">"items.content"</span> @<span class="attr">click</span>=<span class="string">"copyWx()"</span>&gt;</span>复制<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置都在copyWx的方法里实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">copyWx: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> clipboard = <span class="keyword">new</span> Clipboard(<span class="string">'.btn'</span>);  <span class="comment">//实例对象</span></span><br><span class="line">	clipboard.on(<span class="string">'success'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;   <span class="comment">//复制成功时执行</span></span><br><span class="line">		e.clearSelection();</span><br><span class="line">	&#125;);</span><br><span class="line">	clipboard.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;    <span class="comment">//复制失败时执行</span></span><br><span class="line">		<span class="built_in">console</span>.error(<span class="string">'Action:'</span>, e.action);</span><br><span class="line">		<span class="built_in">console</span>.error(<span class="string">'Trigger:'</span>, e.trigger);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
