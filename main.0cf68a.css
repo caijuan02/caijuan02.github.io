@@ -2881,6 +2881,7 @@ pre .id {
   border-radius: 20px;
   font-size: 1.1em;
   text-align: center;
+  font-weight: 600;
   color: #fff;
   opacity: 0;
   cursor: default;
