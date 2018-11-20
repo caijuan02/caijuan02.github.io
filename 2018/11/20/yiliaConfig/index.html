@@ -8,16 +8,22 @@
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
   <title>yiliaConfig | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="yilia 的一些配置">
+  <meta name="description" content="使用 hexo 的 yilia主题的一些配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yiliaConfig">
 <meta property="og:url" content="https://caijuan02.github.io/2018/11/20/yiliaConfig/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="yilia 的一些配置">
-<meta property="og:updated_time" content="2018-11-20T06:06:02.000Z">
+<meta property="og:description" content="使用 hexo 的 yilia主题的一些配置">
+<meta property="og:image" content="https://caijuan02.github.io/img/1.jpg">
+<meta property="og:image" content="https://caijuan02.github.io/img/2.jpg">
+<meta property="og:image" content="https://caijuan02.github.io/img/3.jpg">
+<meta property="og:image" content="https://caijuan02.github.io/img/4.jpg">
+<meta property="og:image" content="https://caijuan02.github.io/img/1.jpg">
+<meta property="og:updated_time" content="2018-11-20T08:32:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yiliaConfig">
-<meta name="twitter:description" content="yilia 的一些配置">
+<meta name="twitter:description" content="使用 hexo 的 yilia主题的一些配置">
+<meta name="twitter:image" content="https://caijuan02.github.io/img/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -36,10 +42,6 @@
   
 
   
-	<script type="text/javascript">
-		// #你的百度统计代码
-	</script>
-
 </head>
 
 <body>
@@ -93,6 +95,9 @@
 		        
 			</div>
 		</nav>
+		<div class="player-wrap">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=519866925&auto=1&height=66"></iframe>
+		</div>
 	</header>		
 </div>
 
@@ -174,25 +179,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="yilia-的一些配置"><a href="#yilia-的一些配置" class="headerlink" title="yilia 的一些配置"></a>yilia 的一些配置</h3><a id="more"></a>
+        <h3 id="使用-hexo-的-yilia主题的一些配置"><a href="#使用-hexo-的-yilia主题的一些配置" class="headerlink" title="使用 hexo 的 yilia主题的一些配置"></a>使用 hexo 的 yilia主题的一些配置</h3><a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=519866925&auto=1&height=66"></iframe>
+
 <p>基本上都是修改配置文件 根目录/themes/yilia/_config.yml</p>
 <h4 id="头像-设置-avatar-属性"><a href="#头像-设置-avatar-属性" class="headerlink" title="头像 设置 avatar 属性"></a>头像 设置 avatar 属性</h4><ul>
 <li>可以使用网上的头像<br>avatar: <a href="http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg" target="_blank" rel="noopener">http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg</a></li>
-<li><p>使用静态地址<br>  1.可以在yilia/source文件目录下建个 assets 文件夹<br>  2.将图片放到assets文件夹下<br>  3.使用   avatar: /assets/head.jpg</p>
-</li>
-<li><p>favicon 属性可以设为跟头像一样的，这是在网址栏中可以展示的小logo<br>  favicon: /assets/head.jpg</p>
-</li>
+<li>使用静态地址<br>  1.可以在yilia/source文件目录下建个 assets 文件夹<br>  2.将图片放到assets文件夹下<br>  3.使用   avatar: /assets/head.jpg</li>
+<li>favicon 属性可以设为跟头像一样的，这是在网址栏中可以展示的小logo<br>  favicon: /assets/head.jpg</li>
 </ul>
 <h4 id="展示文章摘要"><a href="#展示文章摘要" class="headerlink" title="展示文章摘要"></a>展示文章摘要</h4><ul>
 <li>文章太长，截断按钮文字<br>excerpt_link: more</li>
-<li>文章卡片右下角常驻链接，不需要请设置为false<br>show_all_link: ‘展开全文’</li>
+<li>文章卡片右下角常驻链接，不需要请设置为false<br>show_all_link: ‘展开全文’<br>实现:<br><img src="/img/1.jpg" alt="Image text"></li>
 </ul>
 <h4 id="文章展示目录"><a href="#文章展示目录" class="headerlink" title="文章展示目录"></a>文章展示目录</h4><ul>
 <li>目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录<br>toc: 2</li>
 <li>根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false<br>toc_hide_index: true</li>
-<li>目录为空时的提示<br>toc_empty_wording: ‘目录，不存在的…’</li>
+<li>目录为空时的提示<br>toc_empty_wording: ‘目录，不存在的…’<br>实现:<br><img src="/img/2.jpg" alt="Image text"></li>
 </ul>
-<p>#### </p>
+<h4 id="链入网易云音乐"><a href="#链入网易云音乐" class="headerlink" title="链入网易云音乐"></a>链入网易云音乐</h4><ul>
+<li>在网易云音乐网页版选择一首音乐</li>
+<li>点击页面左侧的生成外链播放器<br><img src="/img/3.jpg" alt="Image text"></li>
+<li>可以设置大小和是否自动播放<br><img src="/img/4.jpg" alt="Image text"></li>
+<li>在单个页面添加音乐<br>  复制html代码放在想要添加音乐的md文件里即可</li>
+<li>在主题左侧添加<br>  1.同样复制外链代码<br>  2.在yilia/_partial 文件目录下找到 left-col.ejs文件<br>  3.在 前面加一个新的div标签，将复制的代码放进去 即：  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"player-wrap"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">260</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=519866925&amp;auto=1&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>现在已经实现了，但是样式会有点乱，样式修改在下面会有</li>
+</ul>
+<h4 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h4><p>自定义样式就是修改该主题的样式，对于懂得前端的同学是很简单的</p>
+<ul>
+<li>在yilia/source 目录下找到后缀名是 .css的文件  我的是main.0cf68a.css</li>
+<li><p>文件可能是压缩的，可以到网上格式化代码就行了，接下来就是前端的拿手本领了</p>
+</li>
+<li><p>上面提到的在左侧加入音乐链接后样式乱的问题，可以在 .css文件加 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.player-wrap</span> &#123;</span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">100px</span><span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">	<span class="attribute">left</span>: -<span class="number">17px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这只是修改我的样式，可能不适应所有的</p>
+<h4 id="在文章中使用图片"><a href="#在文章中使用图片" class="headerlink" title="在文章中使用图片"></a>在文章中使用图片</h4><ul>
+<li>在根目录下的source目录文件夹下增加img文件夹放图片</li>
+<li><p>图片语法 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Image text](<span class="regexp">/img/</span><span class="number">1.</span>jpg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例: <img src="/img/1.jpg" alt="Image text">    不使用语法展示的就是文字了</p>
+</li>
+</ul>
+<h4 id="开启打赏"><a href="#开启打赏" class="headerlink" title="开启打赏"></a>开启打赏</h4><ul>
+<li>打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏<br>reward_type: 2</li>
+<li>打赏wording<br>reward_wording: ‘谢谢你请我吃糖果’</li>
+<li>支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/head.jpg<br>alipay: /assets/zfb.jpg</li>
+<li>微信二维码图片地址<br>weixin: /assets/wx.jpg</li>
+</ul>
 
       
 
@@ -208,11 +247,6 @@
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/zfb.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
                     
                     
                     <div class="reward-box-item">
@@ -325,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#yilia-的一些配置"><span class="toc-number">1.</span> <span class="toc-text">yilia 的一些配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#头像-设置-avatar-属性"><span class="toc-number">1.1.</span> <span class="toc-text">头像 设置 avatar 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#展示文章摘要"><span class="toc-number">1.2.</span> <span class="toc-text">展示文章摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文章展示目录"><span class="toc-number">1.3.</span> <span class="toc-text">文章展示目录</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-hexo-的-yilia主题的一些配置"><span class="toc-number">1.</span> <span class="toc-text">使用 hexo 的 yilia主题的一些配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#头像-设置-avatar-属性"><span class="toc-number">1.1.</span> <span class="toc-text">头像 设置 avatar 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#展示文章摘要"><span class="toc-number">1.2.</span> <span class="toc-text">展示文章摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文章展示目录"><span class="toc-number">1.3.</span> <span class="toc-text">文章展示目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链入网易云音乐"><span class="toc-number">1.4.</span> <span class="toc-text">链入网易云音乐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义样式"><span class="toc-number">1.5.</span> <span class="toc-text">自定义样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在文章中使用图片"><span class="toc-number">1.6.</span> <span class="toc-text">在文章中使用图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开启打赏"><span class="toc-number">1.7.</span> <span class="toc-text">开启打赏</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -351,7 +385,7 @@
 <script>
 var gitment = new Gitment({
   id: "Tue Nov 20 2018 13:51:59 GMT+0800",
-  owner: 'caijuan02',
+  owner: 'GitHub',
   repo: 'caijuan02.github.com',
   oauth: {
     client_id: '5a87ab0483c8702b805e',
