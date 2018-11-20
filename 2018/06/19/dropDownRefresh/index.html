@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/head.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -35,6 +35,11 @@
 
   
 
+  
+	<script type="text/javascript">
+		// #你的百度统计代码
+	</script>
+
 </head>
 
 <body>
@@ -46,7 +51,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+			<img src="/assets/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">蔡娟</a></h1>
@@ -102,7 +107,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+				<img src="/assets/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">蔡娟</h1>
@@ -178,6 +183,37 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">loadAjax(index) &#123;</span><br><span class="line">	<span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">if</span> (index || (!that.blockRequest &amp;&amp; that.hasMore)) &#123;</span><br><span class="line">		that.blockRequest = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (index) &#123;</span><br><span class="line">		that.curPage = <span class="number">1</span>;</span><br><span class="line">		that.hasMore = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	that.loading(<span class="number">1</span>);</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url: APIS.getRecommendedAct,</span><br><span class="line">		type: <span class="string">'GET'</span>,</span><br><span class="line">		data: &#123;</span><br><span class="line">		type: that.type,            </span><br><span class="line">		page: that.curPage,</span><br><span class="line">		page_size: <span class="number">20</span></span><br><span class="line">		&#125;,</span><br><span class="line">		success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// if(that.isTouchIng)&#123;</span></span><br><span class="line">		<span class="comment">//   return false;</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		<span class="keyword">if</span> (res.ret == <span class="number">0</span>) &#123;</span><br><span class="line">			that.newGoods.title = res.data.title;</span><br><span class="line">			that.curPage = res.data.page_current;</span><br><span class="line">			that.pageTatol = res.data.page_total;</span><br><span class="line">			<span class="keyword">if</span> (that.curPage == <span class="number">1</span>) &#123;</span><br><span class="line">			that.newGoods.act_list = res.data.act_list;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			that.newGoods.act_list = that.newGoods.act_list.concat(res.data.act_list);</span><br><span class="line">			&#125;</span><br><span class="line">			that.curPage++;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// JAlert.show(res.msg || '接口返回内容出错');</span></span><br><span class="line">			that.loading(<span class="number">3</span>);              </span><br><span class="line">		&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(that.isTouchIng)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		that.loading(<span class="number">3</span>);                          </span><br><span class="line">		<span class="comment">// JAlert.show('请求出错');</span></span><br><span class="line">		&#125;,</span><br><span class="line">		complete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// if(that.isTouchIng)&#123;</span></span><br><span class="line">		<span class="comment">//   return false;</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		$(<span class="string">'.l-refresh'</span>).animate(&#123; <span class="string">'height'</span>: <span class="string">'0'</span> &#125;, <span class="string">'1000'</span>); </span><br><span class="line">		<span class="keyword">if</span> ($(<span class="string">'.l-refresh'</span>).height == <span class="number">0</span>) &#123;</span><br><span class="line">			that.hideLoadingAnimate();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (that.curPage &gt; that.pageTatol) &#123;</span><br><span class="line">			that.hasMore = <span class="literal">false</span>;</span><br><span class="line">			that.loading(<span class="number">2</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			that.loading(<span class="number">0</span>);</span><br><span class="line">		&#125; </span><br><span class="line">		that.blockRequest = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -306,13 +342,13 @@
 
   
   <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
   id: "Tue Jun 19 2018 09:17:20 GMT+0800",
-  owner: 'GitHub',
-  repo: 'caijuan02.github.io',
+  owner: 'caijuan02',
+  repo: 'caijuan02.github.com',
   oauth: {
     client_id: '5a87ab0483c8702b805e',
     client_secret: '37516fe6c8d1c8d4f8ac4689dee9bd804b549232',

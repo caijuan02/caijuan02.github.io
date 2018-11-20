@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/head.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -35,6 +35,11 @@
 
   
 
+  
+	<script type="text/javascript">
+		// #你的百度统计代码
+	</script>
+
 </head>
 
 <body>
@@ -46,7 +51,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+			<img src="/assets/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">蔡娟</a></h1>
@@ -102,7 +107,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://img1.imgtn.bdimg.com/it/u=3326462970,2213270039&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+				<img src="/assets/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">蔡娟</h1>
@@ -173,6 +178,37 @@
 <h3 id="比较适用于移动端，H5页面"><a href="#比较适用于移动端，H5页面" class="headerlink" title="比较适用于移动端，H5页面"></a>比较适用于移动端，H5页面</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 错误弹出层</span><br><span class="line">* @param  &#123;string&#125; msg  错误提示</span><br><span class="line">* @param  &#123;int&#125; time 几秒后退出，<span class="number">1000</span> 等于<span class="number">1</span>秒</span><br><span class="line">* @<span class="keyword">return</span> &#123;[type]&#125;      [description]</span><br><span class="line">*/</span><br><span class="line">function popMsg(msg,time)&#123;</span><br><span class="line">	// var w = $(window).width();</span><br><span class="line">	var h = $(window).height();</span><br><span class="line">	<span class="keyword">if</span>($(<span class="string">".msg20151118"</span>))&#123;</span><br><span class="line">		$(<span class="string">".msg20151118"</span>).remove();</span><br><span class="line">	&#125;</span><br><span class="line">	var $box = $(<span class="string">"&lt;div class='msg20151118' style='display:inline-block;'&gt;&lt;/div&gt;"</span>);</span><br><span class="line">	$box.css(&#123;</span><br><span class="line">		<span class="string">"background"</span> : <span class="string">"rgba(0,0,0,.6)"</span>,</span><br><span class="line">		<span class="string">"padding"</span> : <span class="string">"10px"</span>,</span><br><span class="line">		<span class="string">"padding-left"</span> : <span class="string">"20px"</span>,</span><br><span class="line">		<span class="string">"padding-right"</span> : <span class="string">"20px"</span>,</span><br><span class="line">		<span class="string">"line-height"</span> : <span class="string">"24px"</span>,</span><br><span class="line">		<span class="string">"font-size"</span> : <span class="string">"14px"</span>,</span><br><span class="line">		<span class="string">"text-align"</span> : <span class="string">"center"</span>,</span><br><span class="line">		<span class="string">"border-radius"</span> : <span class="string">"10px"</span>,</span><br><span class="line">		<span class="string">"color"</span> : <span class="string">"#fff"</span>,</span><br><span class="line">		<span class="string">"left"</span>: <span class="string">"50%"</span>,</span><br><span class="line">		<span class="string">'z-index'</span> : <span class="number">1000</span></span><br><span class="line">	&#125;)</span><br><span class="line">	$box.text(msg)</span><br><span class="line">	$(<span class="string">"body"</span>).append($box);</span><br><span class="line">	var width = $(<span class="string">".msg20151118"</span>).width();</span><br><span class="line">	var height = $(<span class="string">".msg20151118"</span>).height();</span><br><span class="line">	var w = $box.width();</span><br><span class="line">	w = (w+<span class="number">40</span>)/<span class="number">2</span>;</span><br><span class="line">	h = (h-height)/<span class="number">2</span>;</span><br><span class="line">	$box.css(&#123;</span><br><span class="line">		<span class="string">"position"</span> : <span class="string">"fixed"</span>,</span><br><span class="line">		<span class="string">"top"</span> : h,</span><br><span class="line">		<span class="string">"margin-left"</span> : -w</span><br><span class="line">	&#125;)</span><br><span class="line">	setTimeout(function()&#123;</span><br><span class="line">		$box.remove();</span><br><span class="line">	&#125;,time || <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 调用 --&gt;</span><br><span class="line">popMsg(<span class="string">'hello'</span>);</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -301,13 +337,13 @@
 
   
   <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
   id: "Sun Jan 14 2018 11:20:39 GMT+0800",
-  owner: 'GitHub',
-  repo: 'caijuan02.github.io',
+  owner: 'caijuan02',
+  repo: 'caijuan02.github.com',
   oauth: {
     client_id: '5a87ab0483c8702b805e',
     client_secret: '37516fe6c8d1c8d4f8ac4689dee9bd804b549232',
