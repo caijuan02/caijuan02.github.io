@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/10/15/reg/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
-<meta property="og:updated_time" content="2018-11-22T02:54:55.000Z">
+<meta property="og:updated_time" content="2018-11-22T09:55:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="正则表达式是一种规则，可以查找或者替换匹配该规则的字符">
@@ -175,22 +175,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>正则表达式是一种规则，可以查找或者替换匹配该规则的字符<br><a id="more"></a></p>
-<p>通常用到以下几种js的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line">var reg = /[<span class="number">0</span><span class="number">-9</span>]+/g;</span><br></pre></td></tr></table></figure></p>
+<p>通常用到以下几种js的方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'1234qwertyuiop123'</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[0-9]+/g</span>;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>match() 获取目标字符串中匹配正则表达式的字符，返回一个数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>test() 判断目标字符串中是否存在匹配正则表达式的字符，返回boolean ，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(reg.test(str));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(reg.test(str));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>search() 查找目标字符串中匹配正则表达式的第一个子元素的index位置，有则返回index值，没有返回-1</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.search(reg));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.search(reg));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>replace() 将目标字符串中匹配正则表达式的子元素替换为新的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(reg, <span class="string">'hello'</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.replace(reg, <span class="string">'hello'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>split() 按照正则表达式的规则将字符串拆分为数组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.split(reg));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.split(reg));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -501,6 +501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
@@ -510,10 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +529,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,10 +546,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
             
             <div class="clearfix"></div>

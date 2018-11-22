@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/07/10/firstFile/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
-<meta property="og:updated_time" content="2018-11-22T02:53:17.000Z">
+<meta property="og:updated_time" content="2018-11-22T09:49:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建博客">
 <meta name="twitter:description" content="This is my first blog，I’m really happy.使用hexo 和 github 搭建博客 Quick Start">
@@ -183,17 +183,17 @@
 <li>安装完后检查是否安装成功：</li>
 <li>在终端输入命令：node -v  或  npm -v<br>  eg: v8.5.0 表示版本号</li>
 </ul>
-<p>2.安装hexo<br>直接使用npm安装，可以选择全局安装，执行命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<p>检查hexo是否安装成功<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
-<h4 id="初始化博客根目录"><a href="#初始化博客根目录" class="headerlink" title="初始化博客根目录"></a>初始化博客根目录</h4><p>1.在本地创建一个文件夹，进入改文件目录下<br>eg:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Myblog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
-<p>2.初始化改文件夹<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>2.安装hexo<br>直接使用npm安装，可以选择全局安装，执行命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>检查hexo是否安装成功<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
+<h4 id="初始化博客根目录"><a href="#初始化博客根目录" class="headerlink" title="初始化博客根目录"></a>初始化博客根目录</h4><p>1.在本地创建一个文件夹，进入改文件目录下<br>eg:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Myblog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>2.初始化改文件夹<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
 <p>执行完以上命令，会在Myblog文件夹下生成一些文件<br>    config.yml //网站的配置信息，您可以在这里配置大部分的参数；<br>    package.json  //npm会生成相对于的依赖包<br>    source //存放用户资源的地方，也就是你自己创建的博客文章；<br>    themes //主题文件夹。hexo会根据主题来生成静态页面。</p>
 <h4 id="创建自己的博客文章"><a href="#创建自己的博客文章" class="headerlink" title="创建自己的博客文章"></a>创建自己的博客文章</h4><p>1.新建一篇文章</p>
 <pre><code>- 可以直接在source/(下划线_posts)目录下创建firstFile.md文档
 - 使用命令行创建
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"firstFile"</span> (以下命令都是在Myblog目录下执行)</span><br></pre></td></tr></table></figure>
-<p>2.生成网站<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (可简写为 hexo g 每次保存新的文章都需要执行)</span><br></pre></td></tr></table></figure></p>
-<p>3.启动本地服务器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (可简写为 hexo s)</span><br></pre></td></tr></table></figure></p>
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"firstFile"</span> (以下命令都是在Myblog目录下执行)</span><br></pre></td></tr></table></figure>
+<p>2.生成网站<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (可简写为 hexo g 每次保存新的文章都需要执行)</span><br></pre></td></tr></table></figure></p>
+<p>3.启动本地服务器<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (可简写为 hexo s)</span><br></pre></td></tr></table></figure></p>
 <p>4.在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 预览</p>
 <h4 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h4><p>1.注册github账号<br>2.配置秘钥</p>
 <ul>
@@ -218,10 +218,10 @@
 <ul>
 <li>在github下新建一个库 Create a new repository  用来放博客的内容我的是：caijuan02.github.io</li>
 <li><p>修改根目录下的_config.yml</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/caijuan02/caijuan02.github.io.git  // 就是刚刚新建的库</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:<span class="comment">//github.com/caijuan02/caijuan02.github.io.git  // 就是刚刚新建的库</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>最后使用命令行同步</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -337,7 +337,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          学习前端文档
+          前端学习文档
         
       </div>
     </a>
@@ -527,6 +527,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
@@ -536,10 +540,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,11 +555,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,10 +572,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
             
             <div class="clearfix"></div>

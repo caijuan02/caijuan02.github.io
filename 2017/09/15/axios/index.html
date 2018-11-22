@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2017/09/15/axios/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="axios的使用">
-<meta property="og:updated_time" content="2018-11-22T02:51:59.000Z">
+<meta property="og:updated_time" content="2018-11-22T09:50:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-cli 与axios实现数据交互">
 <meta name="twitter:description" content="axios的使用">
@@ -175,10 +175,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>axios的使用<br><a id="more"></a></p>
-<h3 id="使用axios实现后台的数据交互"><a href="#使用axios实现后台的数据交互" class="headerlink" title="使用axios实现后台的数据交互"></a>使用axios实现后台的数据交互</h3><p>1.首先在项目文件目录下安装 axios   npm install –save axioa<br>2.在项目的main.js中引入axios   import axios from ‘axios’;<br>3.改变原型使用axios<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.withCredentials = true;</span><br><span class="line">Vue.prototype.$axios = axios;</span><br></pre></td></tr></table></figure></p>
-<p>4.在config文件的index.js配置axios<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">    <span class="string">'/api'</span>: &#123;</span><br><span class="line">        target: <span class="string">'http://dev.njga.kefu.com:8090/'</span>, //设置你调用的接口域名和端口号，别忘了加http</span><br><span class="line">        changeOrigin: true,</span><br><span class="line">        pathRewrite: &#123;</span><br><span class="line">            <span class="string">'^/api'</span>: <span class="string">'/'</span> //用 <span class="string">'/app'</span>代替target里面的地址，后面再调用接口的时候直接用api代替，比如我要调用<span class="string">'http://40.00.100.100:3002/user/add'</span>，直接写‘/api/user/add’即可</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>5.实现请求<br>初始化请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const beforeMounte = function()&#123;</span><br><span class="line">  console.log(<span class="string">'beforeMounte'</span>);</span><br><span class="line">  axios.post(<span class="string">'/api/clientservicecenter/clientservicecenterapi/dialog_list'</span>,&#123;</span><br><span class="line">    page: <span class="string">'0'</span>,</span><br><span class="line">    page_size: <span class="string">'10'</span>,</span><br><span class="line">    cs_id: <span class="string">'100000005'</span></span><br><span class="line">  &#125;).then(function(response)&#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;).catch(function(error)&#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后执行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	beforeMount: beforeMounte, //在挂载前执行</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用axios实现后台的数据交互"><a href="#使用axios实现后台的数据交互" class="headerlink" title="使用axios实现后台的数据交互"></a>使用axios实现后台的数据交互</h3><p>1.首先在项目文件目录下安装 axios   npm install –save axioa<br>2.在项目的main.js中引入axios   import axios from ‘axios’;<br>3.改变原型使用axios<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.withCredentials = <span class="literal">true</span>;</span><br><span class="line">Vue.prototype.$axios = axios;</span><br></pre></td></tr></table></figure></p>
+<p>4.在config文件的index.js配置axios<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">    <span class="string">'/api'</span>: &#123;</span><br><span class="line">        target: <span class="string">'http://dev.njga.kefu.com:8090/'</span>, <span class="comment">//设置你调用的接口域名和端口号，别忘了加http</span></span><br><span class="line">        changeOrigin: <span class="literal">true</span>,</span><br><span class="line">        pathRewrite: &#123;</span><br><span class="line">            <span class="string">'^/api'</span>: <span class="string">'/'</span> <span class="comment">//用 '/app'代替target里面的地址，后面再调用接口的时候直接用api代替，比如我要调用'http://40.00.100.100:3002/user/add'，直接写‘/api/user/add’即可</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>5.实现请求<br>初始化请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> beforeMounte = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'beforeMounte'</span>);</span><br><span class="line">  axios.post(<span class="string">'/api/clientservicecenter/clientservicecenterapi/dialog_list'</span>,&#123;</span><br><span class="line">    page: <span class="string">'0'</span>,</span><br><span class="line">    page_size: <span class="string">'10'</span>,</span><br><span class="line">    cs_id: <span class="string">'100000005'</span></span><br><span class="line">  &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后执行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	beforeMount: beforeMounte, <span class="comment">//在挂载前执行</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -487,6 +487,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
@@ -496,10 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,11 +515,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,10 +532,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
             
             <div class="clearfix"></div>
