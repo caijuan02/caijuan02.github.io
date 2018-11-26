@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>微信小程序跳转到H5并传参 | 蔡娟-爱学习的小前端</title>
+  <title>微信小程序打开H5页面并传参 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="微信小程序跳到H5页面并传参">
-<meta name="keywords" content="微信小程序,链接H5">
+  <meta name="description" content="在微信小程序打开H5页面并传参">
+<meta name="keywords" content="微信小程序,打开H5页面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序跳转到H5并传参">
+<meta property="og:title" content="微信小程序打开H5页面并传参">
 <meta property="og:url" content="https://caijuan02.github.io/2018/11/23/wxToH5/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="微信小程序跳到H5页面并传参">
+<meta property="og:description" content="在微信小程序打开H5页面并传参">
 <meta property="og:image" content="https://caijuan02.github.io/img/wx-1.jpg">
 <meta property="og:image" content="https://caijuan02.github.io/img/wx-2.jpg">
-<meta property="og:updated_time" content="2018-11-23T07:52:54.000Z">
+<meta property="og:updated_time" content="2018-11-26T06:09:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序跳转到H5并传参">
-<meta name="twitter:description" content="微信小程序跳到H5页面并传参">
+<meta name="twitter:title" content="微信小程序打开H5页面并传参">
+<meta name="twitter:description" content="在微信小程序打开H5页面并传参">
 <meta name="twitter:image" content="https://caijuan02.github.io/img/wx-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序跳转到H5并传参
+      微信小程序打开H5页面并传参
     </h1>
   
 
@@ -177,11 +177,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="微信小程序跳到H5页面并传参"><a href="#微信小程序跳到H5页面并传参" class="headerlink" title="微信小程序跳到H5页面并传参"></a>微信小程序跳到H5页面并传参</h3><a id="more"></a>
+        <h3 id="在微信小程序打开H5页面并传参"><a href="#在微信小程序打开H5页面并传参" class="headerlink" title="在微信小程序打开H5页面并传参"></a>在微信小程序打开H5页面并传参</h3><a id="more"></a>
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
 <li>需要有一个企业类的微信小程序，个人类型与海外类型的小程序暂不支持使用。因为不能登录小程序管理后台，以至于没有办法为小程序添加h5的合法域名，就实现不了跳转</li>
 <li>需要有该小程序管理后台的权限<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4></li>
-<li>在小程序新建一个页面，这个页面用来跳到h5页面<br>小程序中的 web-view 组件是一个可以用来承载网页的容器，会自动铺满整个小程序页面。就可以用来实现将需要跳转的 h5 页面展示在小程序的页面上<br>这是讲h5链接到这个页面的代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pageH5页面 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 先展示这个文案，加载成功后消失 --&gt;</span></span><br><span class="line">测试在小程序里面打开合法域名的H5页面</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"pageH5"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">web-view</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;src&#125;&#125;?user=&#123;&#123;name&#125;&#125;&amp;id=&#123;&#123;id&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">web-view</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">src、name、和id都是js data里定义的数据, src是h5链接，name和id是需要传给h5的参数</span><br></pre></td></tr></table></figure>
+<li>在小程序新建一个页面，这个页面用来打开h5页面<br>小程序中的 web-view 组件是一个可以用来承载网页的容器，会自动铺满整个小程序页面。就可以用来实现将需要打开的 h5 页面展示在小程序的页面上<br>这是讲h5链接到这个页面的代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pageH5页面 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 先展示这个文案，加载成功后消失 --&gt;</span></span><br><span class="line">测试在小程序里面打开合法域名的H5页面</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"pageH5"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">web-view</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;src&#125;&#125;?user=&#123;&#123;name&#125;&#125;&amp;id=&#123;&#123;id&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">web-view</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">src、name、和id都是js data里定义的数据, src是h5链接，name和id是需要传给h5的参数</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>属性 src    String类型  webview 指向网页的链接。可打开关联的公众号的文章，其它网页需登录小程序管理后台配置业务域名。</p>
@@ -230,7 +230,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">链接H5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">打开H5页面</a>
         		</li>
       		
 		</ul>
@@ -329,7 +329,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#微信小程序跳到H5页面并传参"><span class="toc-number">1.</span> <span class="toc-text">微信小程序跳到H5页面并传参</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开始"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在微信小程序打开H5页面并传参"><span class="toc-number">1.</span> <span class="toc-text">在微信小程序打开H5页面并传参</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开始"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -343,7 +343,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="wxToH5" data-title="微信小程序跳转到H5并传参" data-url="https://caijuan02.github.io/2018/11/23/wxToH5/"></div>
+	<div class="ds-thread" data-thread-key="wxToH5" data-title="微信小程序打开H5页面并传参" data-url="https://caijuan02.github.io/2018/11/23/wxToH5/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -486,7 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,14 +499,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,6 +511,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +542,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">微信小程序，</a>
+                <a href="javascript:void(0)" class="js-tag color5">链接H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">链接H5</a>
+                <a href="javascript:void(0)" class="js-tag color5">打开H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
             
             <div class="clearfix"></div>
