@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/11/01/es6Study/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="es6已经发版很久了，是时候学习一波了。参考阮一峰大神的 ECMAScript 6 入门: http://es6.ruanyifeng.com/#docs/intro">
-<meta property="og:updated_time" content="2018-11-27T02:19:26.000Z">
+<meta property="og:updated_time" content="2018-11-29T03:51:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6的总结">
 <meta name="twitter:description" content="es6已经发版很久了，是时候学习一波了。参考阮一峰大神的 ECMAScript 6 入门: http://es6.ruanyifeng.com/#docs/intro">
@@ -212,7 +212,30 @@
 <p>3 const 的作用域和 let一样，只在声明所在的块级作用域有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">1</span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(max);  <span class="comment">// ReferenceError: max is not defined</span></span><br></pre></td></tr></table></figure></p>
 <p>4 const 命令声明的变量也是不能提升的，同样存在暂时性死区，只能在声明的位置后面使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(min);   <span class="comment">// ReferenceError: min is not defined</span></span><br><span class="line"><span class="keyword">const</span> min = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <p>5 const 声明的常量，和let一样不能重复声明<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">'cj'</span>;</span><br><span class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="string">'xjj'</span>;    <span class="comment">// SyntaxError: Identifier 'message' has already been declared</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">21</span>;           <span class="comment">// SyntaxError: Identifier 'age' has already been declared</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><h3 id="玩命更新中……"><a href="#玩命更新中……" class="headerlink" title="玩命更新中……"></a>玩命更新中……</h3>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，属于“模式匹配”</p>
+<ul>
+<li>数组的解构赋值<br>等号左边和右边都需是数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 之前的写法</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</span><br><span class="line"><span class="comment">// es6的写法</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">// 只要等号两边的模式一致，等号左边的变量就会被赋值右边对应的值</span></span><br><span class="line"><span class="comment">// 即：a=1, b=2, c=3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1.嵌套数组的解构<br>eg.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, [[b], c]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]];</span><br><span class="line"><span class="comment">// a=1, b=2, c=3</span></span><br><span class="line"><span class="keyword">let</span> [, , d] = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>];</span><br><span class="line"><span class="comment">// d=3</span></span><br><span class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</span><br><span class="line"><span class="comment">// x=a, y=undefined, z=[]</span></span><br><span class="line"><span class="comment">// 解构不成功，找不到匹配的模式，变量的值为undefined,就相当于定义变量未赋值</span></span><br></pre></td></tr></table></figure></p>
+<p>2.不完全解构，即左边的变量都能匹配到右边的一部分数组<br>eg.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [m, n] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">// m=2. n=3</span></span><br><span class="line"><span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</span><br><span class="line"><span class="comment">// a=1, b=2, d=4</span></span><br></pre></td></tr></table></figure></p>
+<p>3.允许指定默认值<br>当数组设默认值了，等号右边的值为undefined时，等号左边的变量会取默认值<br>eg.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x=<span class="number">1</span>] = [<span class="literal">undefined</span>];</span><br><span class="line"><span class="comment">// x=1</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>对象的解构赋值<br>对象的解构赋值与数组有一个重要的不同，数组的元素是按照次序排列的，变量的取值根据元素的位置决定的；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值<br>1.这种是属性名跟变量名相同， bar:bar, 可以简写为bar<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;bar, foo&#125; = &#123;<span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span>&#125;;</span><br><span class="line"><span class="comment">// bar='bbb', foo='aaa'</span></span><br><span class="line"><span class="keyword">let</span> &#123;baz&#125; = &#123;<span class="attr">foor</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span>&#125;;</span><br><span class="line"><span class="comment">// baz='undefined'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果等号左边的属性名跟右边的有对应，则赋值成功，跟次序无关，如果没有找到对应的，该变量就是undefined<br>2.属性名跟变量名不一致<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// foo是匹配的模式，baz是变量，根据foo匹配到等号右侧的值，真正赋值的是baz</span></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">foo</span>:baz&#125; = &#123;<span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>:<span class="string">'bbb'</span>&#125;;</span><br><span class="line"><span class="comment">// baz: 'aaa'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">first</span>: <span class="string">'hello'</span>, <span class="attr">last</span>: <span class="string">'world'</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">first</span>:f, <span class="attr">last</span>: l&#125; = obj;</span><br><span class="line"><span class="comment">// f:'hello', l:'world'</span></span><br></pre></td></tr></table></figure></p>
+<p>3.对象的变量解构也可以用于嵌套的对象<br>eg.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	p: [</span><br><span class="line">		<span class="string">'hello'</span>,</span><br><span class="line">		&#123;<span class="attr">y</span>: <span class="string">'world'</span>&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">p</span>:[x, &#123;y&#125;]&#125; = obj;</span><br><span class="line"><span class="comment">// x:'hello', y:'world'</span></span><br></pre></td></tr></table></figure></p>
+<p>3.对象的变量赋值同样可以设置默认值<br>eg. 默认值生效的条件是，对象的属性值严格等于 undefined<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;x=<span class="number">1</span>&#125; = &#123;&#125;;</span><br><span class="line"><span class="comment">// x:1</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>函数参数的解构赋值<br>1.函数的参数也可以使用解构赋值，规则按照数组或者对象的结构赋值来<br>eg.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">[x,y]</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line">add([<span class="number">2</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h4><p>最常用的是模板字符串，如果有变量的话，传统的是要用jq拼字符串，很繁琐，现在es6中可以使用``反引号来写，变量用${变量}<br>eg.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`heloo, anyone, i am <span class="subst">$&#123;name&#125;</span>`</span></span><br></pre></td></tr></table></figure></p>
+<p>${大括号里可以写js表达式}</p>
+<h4 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h4><p>扩展运算符(…)三个点，将一个数组转为用逗号分隔的参数序列<br>[1, …arr],是常用的组合，合并数组</p>
+<h4 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h4><p>参数可以使用默认值, 当参数值为undefined时，采用默认值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y=<span class="string">'world'</span></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="string">'hello'</span>);  <span class="comment">// hello, world</span></span><br><span class="line">log(<span class="string">'hello'</span>, <span class="string">'es6'</span>);  <span class="comment">// hello, es6</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="玩命更新中……"><a href="#玩命更新中……" class="headerlink" title="玩命更新中……"></a>玩命更新中……</h3>
       
 
       
@@ -359,7 +382,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器与运行环境对ES6的支持"><span class="toc-number">1.</span> <span class="toc-text">浏览器与运行环境对ES6的支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BaBel-转码器"><span class="toc-number">2.</span> <span class="toc-text">BaBel 转码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6新特性"><span class="toc-number">3.</span> <span class="toc-text">ES6新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#let-和-const"><span class="toc-number">3.1.</span> <span class="toc-text">let 和 const</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的解构赋值"><span class="toc-number">4.</span> <span class="toc-text">变量的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#玩命更新中……"><span class="toc-number">5.</span> <span class="toc-text">玩命更新中……</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器与运行环境对ES6的支持"><span class="toc-number">1.</span> <span class="toc-text">浏览器与运行环境对ES6的支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BaBel-转码器"><span class="toc-number">2.</span> <span class="toc-text">BaBel 转码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6新特性"><span class="toc-number">3.</span> <span class="toc-text">ES6新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#let-和-const"><span class="toc-number">3.1.</span> <span class="toc-text">let 和 const</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的解构赋值"><span class="toc-number">4.</span> <span class="toc-text">变量的解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串的扩展"><span class="toc-number">4.1.</span> <span class="toc-text">字符串的扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的扩展"><span class="toc-number">4.2.</span> <span class="toc-text">数组的扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的扩展"><span class="toc-number">4.3.</span> <span class="toc-text">函数的扩展</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#玩命更新中……"><span class="toc-number">5.</span> <span class="toc-text">玩命更新中……</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -516,23 +539,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">get、post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,11 +567,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,7 +579,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,14 +600,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
             
             <div class="clearfix"></div>
