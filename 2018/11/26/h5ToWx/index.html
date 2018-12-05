@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2018/11/26/h5ToWx/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数">
-<meta property="og:updated_time" content="2018-12-04T10:22:41.000Z">
+<meta property="og:updated_time" content="2018-12-04T10:25:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5页面打开微信小程序">
 <meta name="twitter:description" content="上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数">
@@ -176,7 +176,7 @@
       
         <h3 id="上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数"><a href="#上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数" class="headerlink" title="上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数"></a>上个文章写过在微信小程序里打开H5页面同时传参，现在介绍一下在H5页面打开微信小程序并回传参数</h3><a id="more"></a>
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>参考 <a href="https://caijuan02.github.io/2018/11/23/wxToH5/#more">https://caijuan02.github.io/2018/11/23/wxToH5/#more</a> 的准备工作</p>
-<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>h5页面引入js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://res.wx.qq.com/open/js/jweixin-1.3.2.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> user, id;</span><br><span class="line"><span class="keyword">if</span> (ht.indexOf(<span class="string">'name'</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">	user = ht.split(<span class="string">'?'</span>)[<span class="number">1</span>].split(<span class="string">'&amp;'</span>)[<span class="number">0</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">	id = ht.split(<span class="string">'?'</span>)[<span class="number">1</span>].split(<span class="string">'&amp;'</span>)[<span class="number">1</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	user = <span class="string">'caijuan'</span>,</span><br><span class="line">	id = <span class="string">'001'</span></span><br><span class="line">&#125;</span><br><span class="line">$(<span class="string">'.box'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 跳转小程序接口</span></span><br><span class="line">	wx.miniProgram.navigateTo(&#123;</span><br><span class="line">		<span class="comment">// 要打开的小程序页面和参数</span></span><br><span class="line">		url: <span class="string">`/pages/index/index?name=<span class="subst">$&#123;user&#125;</span>&amp;id=<span class="subst">$&#123;id&#125;</span>`</span></span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="comment">// 但是navigateTo有5层 层级限制</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>h5页面引入js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://res.wx.qq.com/open/js/jweixin-1.3.2.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> user, id;</span><br><span class="line"><span class="keyword">if</span> (ht.indexOf(<span class="string">'name'</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">	user = ht.split(<span class="string">'?'</span>)[<span class="number">1</span>].split(<span class="string">'&amp;'</span>)[<span class="number">0</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">	id = ht.split(<span class="string">'?'</span>)[<span class="number">1</span>].split(<span class="string">'&amp;'</span>)[<span class="number">1</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	user = <span class="string">'caijuan'</span>,</span><br><span class="line">	id = <span class="string">'001'</span></span><br><span class="line">&#125;</span><br><span class="line">$(<span class="string">'.box'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 跳转小程序接口</span></span><br><span class="line">	wx.miniProgram.navigateTo(&#123;</span><br><span class="line">		<span class="comment">// 要打开的小程序页面和参数</span></span><br><span class="line">		url: <span class="string">`/pages/index/index?name=<span class="subst">$&#123;user&#125;</span>&amp;id=<span class="subst">$&#123;id&#125;</span>`</span></span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="comment">// 但是navigateTo有5层 层级限制</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>注：该方法只在小程序打开H5页面后，然后再从h5跳到小程序，没有试过在h5直接打开小程序的情况</li>
 </ul>
@@ -289,6 +289,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/12/05/wxSkip/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          微信小程序的跳转方式
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/23/wxToH5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -472,19 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,11 +489,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">get、post</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,15 +517,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +529,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
+                <a href="javascript:void(0)" class="js-tag color3">跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,7 +549,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
             
             <div class="clearfix"></div>
