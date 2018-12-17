@@ -19,7 +19,9 @@
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-2.jpg">
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-3.jpg">
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-4.jpg">
-<meta property="og:updated_time" content="2018-12-17T02:05:02.000Z">
+<meta property="og:image" content="https://caijuan02.github.io/img/vue-5.jpg">
+<meta property="og:image" content="https://caijuan02.github.io/img/vue-6.jpg">
+<meta property="og:updated_time" content="2018-12-17T02:12:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vueEcharts">
 <meta name="twitter:description" content="vue项目中使用echarts，和一些echarts的配置">
@@ -207,7 +209,9 @@
 <li>折线的设置,在series里设置<br>折线颜色和小圆点颜色<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">itemStyle: &#123;</span><br><span class="line">		<span class="comment">// 折线数据拐点处的小圆点的颜色</span></span><br><span class="line">		color: <span class="string">"#fff"</span>,</span><br><span class="line">		<span class="comment">// 折线的颜色</span></span><br><span class="line">		lineStyle: &#123;</span><br><span class="line">			color: <span class="string">'rgb(40,177, 205)'</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>为每个折点数据添加单位,数据的位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">itemStyle: &#123;</span><br><span class="line">	normal: &#123;</span><br><span class="line">		label: &#123;</span><br><span class="line">			<span class="comment">// 让折线处的数据展示</span></span><br><span class="line">			show: <span class="literal">true</span>,</span><br><span class="line">			<span class="comment">// 为每个折线的数据添加单位</span></span><br><span class="line">			formatter: <span class="string">"&#123;c&#125;°"</span>,</span><br><span class="line">			<span class="comment">// 设置折线处的数据在折线的上方</span></span><br><span class="line">			position: <span class="string">'top'</span> </span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/vue-5.jpg" alt="Image text"></p>
+<p>为每个折点数据添加单位,数据的位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">itemStyle: &#123;</span><br><span class="line">	normal: &#123;</span><br><span class="line">		label: &#123;</span><br><span class="line">			<span class="comment">// 让折线处的数据展示</span></span><br><span class="line">			show: <span class="literal">true</span>,</span><br><span class="line">			<span class="comment">// 为每个折线的数据添加单位</span></span><br><span class="line">			formatter: <span class="string">"&#123;c&#125;°"</span>,</span><br><span class="line">			<span class="comment">// 设置折线处的数据在折线的上方</span></span><br><span class="line">			position: <span class="string">'top'</span> </span><br><span class="line">			<span class="comment">// position: 'bottom'  设置在下方</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/vue-6.jpg" alt="Image text"></p>
 
       
 
@@ -223,6 +227,11 @@
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
                     
                     
                     <div class="reward-box-item">
@@ -507,6 +516,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
@@ -515,7 +528,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color4">get、post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +536,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">get、post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">跳转小程序</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,7 +560,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,15 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,11 +580,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+                <a href="javascript:void(0)" class="js-tag color1">跳转小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
             
             <div class="clearfix"></div>
