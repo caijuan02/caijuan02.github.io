@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2019/05/27/taroH5/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="使用Taro框架生成H5时需要注意的地方">
-<meta property="og:updated_time" content="2019-05-27T02:21:53.000Z">
+<meta property="og:updated_time" content="2019-05-27T09:22:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="taroH5">
 <meta name="twitter:description" content="使用Taro框架生成H5时需要注意的地方">
@@ -180,7 +180,8 @@
 <li>使用箭头函数传参用data-xxx 时，h5使用e.currentTarget报错，要使用 this.func.bind(this, 参数)</li>
 <li>图片大小不能在外层套一层View设宽高，然后image宽高为100%，要直接在image标签上设置宽高，因为在h5上会生成类名为Image设置的类名的div包裹img</li>
 <li>h5不支持switchTab跳转，可以直接使用navigateTo，但是小程序跳转tabbar页面只能用switchTab，要进行判断</li>
-<li>h5不支持地图Map</li>
+<li>h5不支持地图Map，使用了腾讯封装的Map地图组件</li>
+<li>h5不兼容taro的日历组件，使用了腾讯封装的日历组件</li>
 <li>h5使用swiper，要加 current={this.state.current} 属性</li>
 <li>h5低版本可能不支持scrollView滑动，需要更新更新taro-cli: taro update self，然后yarn</li>
 <li>h5请求接口要传cookie，在request里加     credentials: ‘include’,</li>
@@ -498,15 +499,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,15 +519,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,11 +555,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跳转</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,7 +563,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跳转</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,7 +579,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
             
             <div class="clearfix"></div>
@@ -630,7 +631,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.npmjs.com/package/cj-projects" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我发布的npm包</a>
+              <a href="https://www.npmjs.com/package/projects-cj" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我发布的npm包</a>
             </li>
           
             <li class="search-li">
