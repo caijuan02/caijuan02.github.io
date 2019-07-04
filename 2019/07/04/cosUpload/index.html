@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>Tag: vue | 蔡娟-爱学习的小前端</title>
+  <title>cosUpload | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="蔡娟-爱学习的小前端">
-<meta property="og:url" content="https://caijuan02.github.io/tags/vue/index.html">
+  <meta name="description" content="使用vue 结合 腾讯cos实现上传图片">
+<meta name="keywords" content="COS,图片上传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cosUpload">
+<meta property="og:url" content="https://caijuan02.github.io/2019/07/04/cosUpload/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
+<meta property="og:description" content="使用vue 结合 腾讯cos实现上传图片">
+<meta property="og:updated_time" content="2019-07-04T09:08:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蔡娟-爱学习的小前端">
+<meta name="twitter:title" content="cosUpload">
+<meta name="twitter:description" content="使用vue 结合 腾讯cos实现上传图片">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -149,264 +154,250 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-cosUpload" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/vueEcharts/" class="archive-article-date">
-  	<time datetime="2018-12-17T01:19:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/vueEcharts/">vueEcharts</a>
+    <h1 class="article-title" itemprop="name">
+      cosUpload
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/04/cosUpload/" class="archive-article-date">
+  	<time datetime="2019-07-04T08:42:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用vue 结合 腾讯cos实现上传图片<br><a id="more"></a></p>
+<h3 id="cos"><a href="#cos" class="headerlink" title="cos"></a>cos</h3><p>cos客户端：<a href="https://cloud.tencent.com/document/product/436/11366" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/436/11366</a><br>cos入门：<a href="https://cloud.tencent.com/document/product/436/11459" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/436/11459</a><br>借鉴：<a href="https://www.jb51.net/article/161251.htm" target="_blank" rel="noopener">https://www.jb51.net/article/161251.htm</a></p>
+<h3 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h3><ul>
+<li><p>安装依赖包</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cos-js-sdk-v5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 axios 来请求接口</p>
+</li>
+<li>代码 封装  cos.js  文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> CosCloud <span class="keyword">from</span> <span class="string">"cos-js-sdk-v5"</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 上传文件(调用相关api putObject来上传文件)</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @method uploadFile</span></span><br><span class="line"><span class="comment"> * @param &#123;object&#125; cos</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">cos, file, signInfo, callback</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// name： 图片的名称，可以自定义，这里为了不覆盖相同名照片，使用了时间戳</span></span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">`/store/st/<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>().valueOf()&#125;</span>`</span></span><br><span class="line">  <span class="keyword">let</span> pic = <span class="string">''</span></span><br><span class="line">  <span class="comment">// Bucket： 存储桶  Bucket 的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式</span></span><br><span class="line">  <span class="comment">// Region：Bucket 所在地域，枚举值请参阅 地域和访问域名：https://cloud.tencent.com/document/product/436/6224</span></span><br><span class="line">  cos.putObject(</span><br><span class="line">    &#123;</span><br><span class="line">      Bucket: <span class="string">'marryparty-1253457213'</span>,</span><br><span class="line">      Region: <span class="string">'ap-guangzhou'</span>,</span><br><span class="line">      Key: <span class="string">`<span class="subst">$&#123;name&#125;</span>`</span>,</span><br><span class="line">      Dir: <span class="string">'store'</span>,</span><br><span class="line">      Body: file,</span><br><span class="line">      onHashProgress: <span class="function"><span class="keyword">function</span> (<span class="params">progressData</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'校验中'</span>, <span class="built_in">JSON</span>.stringify(progressData));</span><br><span class="line">      &#125;,</span><br><span class="line">      onProgress: <span class="function"><span class="keyword">function</span> (<span class="params">progressData</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'上传中'</span>, progressData)</span><br><span class="line">        <span class="keyword">if</span> (progressData.percent === <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="comment">// 上传完执行操作  这里将图片的 pic 作为图片的src 抛出去，在调用的地方用res.pic获取即可</span></span><br><span class="line">          pic = <span class="string">`http://marryparty-1253457213.cos.ap-guangzhou.myqcloud.com<span class="subst">$&#123;name&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data)</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        callback(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">msg</span>: <span class="string">'文件上传失败!'</span> &#125;);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 上传成功把数据抛出去， pic 是上文的图片的链接</span></span><br><span class="line">      callback(&#123; <span class="attr">success</span>: <span class="literal">true</span>, <span class="attr">msg</span>: <span class="string">'上传成功!'</span>, <span class="attr">data</span>: data, <span class="attr">signInfo</span>: signInfo, <span class="attr">pic</span>: pic &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取文件上传密钥（最好存在后端通过ajax请求获取，安全性较高）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileToken</span>(<span class="params">Vue, fileInfo, cos, file, uploadStatusCallbalck</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 秘钥是请求后台的接口，替换即可</span></span><br><span class="line">  <span class="comment">// 正式环境会自动加域名</span></span><br><span class="line">  <span class="keyword">let</span> url = <span class="string">'/manage/store-api/get_ticket'</span></span><br><span class="line">  <span class="comment">// 本地</span></span><br><span class="line">  <span class="comment">// let url = 'https://store.ihuyue.cn/manage/store-api/get_ticket'  </span></span><br><span class="line">  <span class="keyword">if</span> (!file) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">// 异步获取临时密钥</span></span><br><span class="line">  axios</span><br><span class="line">    .get(url)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (res.data.ret == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">//获取的临时秘钥存储在vuex中</span></span><br><span class="line">        Vue.$store.commit(<span class="string">'setUPDATEFILEINFO'</span>, res.data.data);</span><br><span class="line">        uploadFile(cos, file, res.data.data, uploadStatusCallbalck);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        uploadStatusCallbalck(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">msg</span>: <span class="string">'获取文件秘钥失败!'</span> &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      uploadStatusCallbalck(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">msg</span>: <span class="string">'获取文件秘钥接口出错!'</span> &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化上传文件对象</span></span><br><span class="line"><span class="comment"> * @param &#123;object&#125; Vue</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; fileName 文件名</span></span><br><span class="line"><span class="comment"> * @param &#123;object&#125; file 上传的文件流及文件类型 名称相关信息</span></span><br><span class="line"><span class="comment"> * @param &#123;Array&#125; 允许上传的文件类型</span></span><br><span class="line"><span class="comment"> * @param &#123;function&#125; uploadStatusCallbalck</span></span><br><span class="line"><span class="comment"> * @return &#123;function&#125; 返回回调函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> initUploadObj = <span class="function"><span class="keyword">function</span> (<span class="params">Vue, fileName, file, type, uploadStatusCallbalck</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fileInfo = &#123;</span><br><span class="line">    file_name: fileName,</span><br><span class="line">    media_type: <span class="number">2</span>,</span><br><span class="line">    media_sub_type: <span class="number">0</span>,</span><br><span class="line">    size_of_bytes: <span class="number">122</span>,</span><br><span class="line">    file_expired_type: <span class="string">'permanent'</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(file, <span class="string">'file---------'</span>)</span><br><span class="line">  <span class="comment">// 上传图片大小做限制</span></span><br><span class="line">  <span class="keyword">if</span> (file.size &gt; <span class="number">2048</span>) &#123;</span><br><span class="line">    Vue.$Message.error(<span class="string">'请上传小于2M的图片！'</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//前端做文件类型限制</span></span><br><span class="line">  <span class="keyword">if</span> (type == <span class="string">'image'</span>) &#123;</span><br><span class="line">    type = [<span class="string">'.jpg'</span>, <span class="string">'.gif'</span>, <span class="string">'.jpeg'</span>, <span class="string">'.bmp'</span>, <span class="string">'.png'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (type == <span class="string">'excel'</span>) &#123;</span><br><span class="line">    type = [<span class="string">'.xlsx'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> fileType = file.name ? file.name.substring(file.name.lastIndexOf(<span class="string">"."</span>)).toLowerCase() : <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">if</span> (!!type &amp;&amp; type.indexOf(fileType) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    uploadStatusCallbalck(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">msg</span>: <span class="string">'请上传正确的'</span> + type + <span class="string">'文件格式!'</span> &#125;)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> cos = <span class="keyword">new</span> CosCloud(&#123;</span><br><span class="line">    getAuthorization: <span class="function"><span class="keyword">function</span> (<span class="params">options, callback</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> singleInfo = Vue.$store.state.app.fileToken;</span><br><span class="line">      callback(&#123;</span><br><span class="line">        TmpSecretId: singleInfo.credentials.tmpSecretId,</span><br><span class="line">        TmpSecretKey: singleInfo.credentials.tmpSecretKey,</span><br><span class="line">        XCosSecurityToken: singleInfo.credentials.sessionToken,</span><br><span class="line">        ExpiredTime: singleInfo.expiredTime,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">  fileInfo.file_name = file.name</span><br><span class="line">  <span class="comment">//获取文件上传密钥</span></span><br><span class="line">  getFileToken(Vue, fileInfo, cos, file, uploadStatusCallbalck);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> initUploadObj</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p>html  这里只上传一张图片，可以根据自己需要修改</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"l-pic"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"formValidate.header"</span>  <span class="attr">class</span>=<span class="string">"upload-img"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"up-img"</span> <span class="attr">:src</span>=<span class="string">"formValidate.header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up-change"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>修改头像<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"up-input"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span> @<span class="attr">change</span>=<span class="string">"uploadImg()"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"up-block"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Icon</span> <span class="attr">type</span>=<span class="string">"ios-add"</span> <span class="attr">size</span>=<span class="string">"25"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"up-input"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span> @<span class="attr">change</span>=<span class="string">"uploadImg()"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"msg"</span>&gt;</span>上传图片的宽高比必须满足1:1，否则无法上传！建议图片尺寸为130 * 130。（最大不超过2M）<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这里把css也贴出来，方便看效果</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.l-pic</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  .upload-img &#123;</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">    <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-class">.up-img</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.up-change</span> &#123;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="attribute">text-align</span>: center;</span><br><span class="line">      <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">      <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, .4);</span><br><span class="line">      .up-input &#123;</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 0;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">width</span>: 100%;</span><br><span class="line">        <span class="selector-tag">height</span>: 100%;</span><br><span class="line">        <span class="selector-tag">outline</span>: <span class="selector-tag">none</span>;</span><br><span class="line">        <span class="selector-tag">opacity</span>: 0;</span><br><span class="line">        <span class="selector-tag">z-index</span>: 3;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.up-block</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> dashed <span class="number">#ccc</span>;</span><br><span class="line">    .up-input &#123;</span><br><span class="line">      <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">      <span class="selector-tag">top</span>: 0;</span><br><span class="line">      <span class="selector-tag">left</span>: 0;</span><br><span class="line">      <span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">      <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">      <span class="selector-tag">outline</span>: <span class="selector-tag">none</span>;</span><br><span class="line">      <span class="selector-tag">opacity</span>: 0;</span><br><span class="line">      <span class="selector-tag">z-index</span>: 3;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.msg</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(45, 140, 240);</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> initUploadObj <span class="keyword">from</span> <span class="string">'@/libs/cos'</span></span><br><span class="line"></span><br><span class="line">uploadImg() &#123;</span><br><span class="line">  <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">let</span> file = <span class="built_in">document</span>.querySelector(<span class="string">'input[type=file]'</span>).files[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">let</span> type = file.type</span><br><span class="line">  <span class="comment">//初始化文件上传</span></span><br><span class="line">  initUploadObj(that, file.name, file, <span class="string">'image'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res.success) &#123;</span><br><span class="line">      <span class="comment">// 这里res是cos里返回的数据</span></span><br><span class="line">      <span class="built_in">console</span>.log(res.pic)</span><br><span class="line">      <span class="comment">// 上传图片比例限制</span></span><br><span class="line">      <span class="keyword">let</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">      img.src = res.pic</span><br><span class="line">      img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> w = img.width</span><br><span class="line">        <span class="keyword">let</span> h = img.height</span><br><span class="line">        <span class="keyword">if</span> (w != h) &#123;</span><br><span class="line">          that.$Message.error(<span class="string">'请按照规定的宽高比上传图片！'</span>)</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          that.formValidate.header = res.pic</span><br><span class="line">          that.formValidate = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(that.formValidate))</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.$Message.error(<span class="string">'图片上传失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">COS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">echarts</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片上传</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/vueLongTap/" class="archive-article-date">
-  	<time datetime="2018-02-04T02:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/vueLongTap/">vue自定义移动端touch事件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/15/axios/" class="archive-article-date">
-  	<time datetime="2017-09-15T12:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/15/axios/">vue-cli 与axios实现数据交互</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2019/07/04/cosUpload/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/07/vue-router/" class="archive-article-date">
-  	<time datetime="2017-09-07T12:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/27/taroH5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">taroH5</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/07/vue-router/">vue-router使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cos"><span class="toc-number">1.</span> <span class="toc-text">cos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js代码"><span class="toc-number">2.</span> <span class="toc-text">js代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/vue-cli/" class="archive-article-date">
-  	<time datetime="2017-09-03T02:23:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        </div>
-    	 
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="cosUpload" data-title="cosUpload" data-url="https://caijuan02.github.io/2019/07/04/cosUpload/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/vue-cli/">vue-cli使用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/25/vue/" class="archive-article-date">
-  	<time datetime="2017-08-25T05:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/25/vue/">vue的使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
   
 
-    
+  
 
 
           </div>
@@ -438,9 +429,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
