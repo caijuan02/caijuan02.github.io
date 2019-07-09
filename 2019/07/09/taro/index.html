@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>vue的使用 | 蔡娟-爱学习的小前端</title>
+  <title>taro | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用">
-<meta name="keywords" content="vue">
+  <meta name="description" content="Taro框架遇到的一些坑">
+<meta name="keywords" content="taro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue的使用">
-<meta property="og:url" content="https://caijuan02.github.io/2017/08/25/vue/index.html">
+<meta property="og:title" content="taro">
+<meta property="og:url" content="https://caijuan02.github.io/2019/07/09/taro/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用">
-<meta property="og:updated_time" content="2018-11-22T09:56:16.000Z">
+<meta property="og:description" content="Taro框架遇到的一些坑">
+<meta property="og:updated_time" content="2019-07-09T01:45:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue的使用">
-<meta name="twitter:description" content="本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用">
+<meta name="twitter:title" content="taro">
+<meta name="twitter:description" content="Taro框架遇到的一些坑">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -154,63 +154,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-taro" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue的使用
+      taro
     </h1>
   
 
         
-        <a href="/2017/08/25/vue/" class="archive-article-date">
-  	<time datetime="2017-08-25T05:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+        <a href="/2019/07/09/taro/" class="archive-article-date">
+  	<time datetime="2019-07-09T01:39:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文先介绍一下vue.js的使用，后续会有关于vue脚手架vue-cli的使用<br><a id="more"></a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>可以直接用&lt; script&gt;引入<br>直接在官网下载到本地后然后用&lt; script&gt;标签引入，我一般都用这种</li>
-<li>CDN引入<br>推荐：<a href="https://cdn.jsdelivr.net/npm/vue" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue</a> 会保持和 npm 发布的最新的版本一致</li>
-<li>NPM安装<ul>
-<li>安装npm，需要先安装node，npm就自动安装好了</li>
-<li>安装vue<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><p>在引入vue.js后就要创建Vue实例，然后就可以开始使用vue了</p>
+        <p>Taro框架遇到的一些坑<br><a id="more"></a></p>
 <ul>
-<li>创建一个vue的实例<br>1.创建挂载点 html元素<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">	&lt;div @click=<span class="string">"published"</span>&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/ 组件使用</span></span><br><span class="line"><span class="regexp">	&lt;todo-item </span></span><br><span class="line"><span class="regexp">		v-for="(item, index) of list"</span></span><br><span class="line"><span class="regexp">		:key = "index"</span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/ 父组件向子组件传值用属性</span></span><br><span class="line"><span class="regexp">		:content = "item"</span></span><br><span class="line"><span class="regexp">	&gt;&lt;/</span>todo-item&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>不能在包含 JSX 元素的 map 循环中使用 if 表达式，尽量在 map 循环中使用条件表达式或逻辑表达式。<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;View className=<span class="string">'grade'</span>&gt;</span><br><span class="line">  &#123;hotelDetail.rank.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item ? &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['ic_star']&#125; /&gt; : &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['icon_star_info']&#125; /&gt;</span><br><span class="line">  &#125;)&#125;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>在父组件上传参，需要用 data-goodId={item.goods_id}   方法里使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">goToDetail = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.currentTarget.dataset.goodid, <span class="string">'-------'</span>)</span><br><span class="line">  <span class="keyword">let</span> goodid = e.currentTarget.dataset.goodid</span><br><span class="line">  Taro.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">`/pages/detail/detail?goods_id=<span class="subst">$&#123;goodid&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用taro的Map组件，官方说跟小程序的使用是一样的，但是在实践中并不是完全一样，而且官网也没说<br>例如map 的一些方法：<br>视野发生变化时触发<br>小程序是  bindregionchange=”regionchange”<br>taro是       onRegionChange={this.regionchange}<br>点击标记点时触发，会返回marker的id<br>小程序是   bindmarkertap=”markertap”<br>taro是        onMarkerTap={this.markertap}<br>具体的对应文件可以在taro代码的  node_modules/@tarojs/components/types/Map.d.ts  文件中找到方法名</p>
+</li>
+<li>h5登录使用公众号授权，跳转回来的页面不对，是因为使用默认的路由方式会带#，而登录接口会把#号后面的屏蔽了</li>
+<li>使用input输入框的时候，设置height和line-height会有样式问题，输入的文字会被截取，不设置height和line-height就行</li>
+<li>使用setState用当前变量改变 （setState()实际上可以接受一个函数作为参数，函数的首个参数就是上一次的state。）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> &#123;<span class="attr">count</span>: prevState.count + <span class="number">1</span>&#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>2.在js中编写代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="comment">// 将id为app的元素创建为一个Vue实例，就可以在该元素里使用vue，在元素外使用vue会报错</span></span><br><span class="line">	el: <span class="string">'#app'</span>,</span><br><span class="line">	<span class="comment">// 局部组件需要定义</span></span><br><span class="line">	components: &#123;</span><br><span class="line">		<span class="string">'todo-item'</span>: TodoItem</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 数据</span></span><br><span class="line">	data: &#123;</span><br><span class="line">		message: <span class="string">''</span>,</span><br><span class="line">		list: [],</span><br><span class="line">		count: <span class="number">0</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">// 计算属性  可以直接使用 messageNum，相当于data中的数据</span></span><br><span class="line">	computed: &#123;</span><br><span class="line">		<span class="comment">// 计算属性的 getter</span></span><br><span class="line">		messageNum: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">200</span> - <span class="keyword">this</span>.message.length;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">// 侦听器   侦听message的变化，一旦数据发生变化可以进行操作</span></span><br><span class="line">	watch: &#123;</span><br><span class="line">		message: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.count ++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">// 方法</span></span><br><span class="line">	methods: &#123;</span><br><span class="line">		<span class="comment">// 发表评论</span></span><br><span class="line">		published: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.message);</span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="comment">// 初始化数据</span></span><br><span class="line">		initDate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">'请求接口'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">// vue生命周期，created是实例在生成后执行，可以用来初始化数据</span></span><br><span class="line">	created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.initDate()</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 全局组件   可以在项目中的任何地方使用</span></span><br><span class="line">	Vue.component(<span class="string">'todo-item'</span>, &#123;</span><br><span class="line">		<span class="comment">// 子组件获取父组件传的值</span></span><br><span class="line">		props: [<span class="string">'content'</span>],</span><br><span class="line">		template: <span class="string">'&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;'</span></span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="comment">// 局部组件</span></span><br><span class="line">	<span class="keyword">var</span> TodoItem = &#123;</span><br><span class="line">		template: <span class="string">'&lt;li&gt;item&lt;/li&gt;'</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><ul>
-<li><p>使用data数据<br>在html中使用data里的数据：<br>eg：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用指令<br>常用的指令有</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">v-model:数据双向绑定</span><br><span class="line">v-<span class="keyword">if</span>:条件渲染</span><br><span class="line">v-<span class="keyword">for</span>:列表渲染</span><br><span class="line">v-bind:属性的值是动态的要使用 eg：v-bind:src=<span class="string">''</span> 可缩写为 :src</span><br><span class="line">v-on:监听事件 可缩写为 @click=<span class="string">"函数名()"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>用法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-<span class="keyword">if</span>=<span class="string">"message"</span>&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="父子组件传值"><a href="#父子组件传值" class="headerlink" title="父子组件传值"></a>父子组件传值</h3><p>父子组件用props传值   引用的是父组件</p>
-<ul>
-<li>父组件传值：    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;appmain :noLeft=<span class="string">"true"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">appmain</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>noLeft也可以写在data中，动态传值</p>
-<ul>
-<li>子组件接受值：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">    noLeft: &#123;</span><br><span class="line">      type: <span class="built_in">Boolean</span>,    <span class="comment">//类型</span></span><br><span class="line">      <span class="keyword">default</span>: <span class="literal">false</span>     <span class="comment">//默认值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可以在子组件中直接使用noLeft<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123;noLeft: noLeft&#125;"</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -255,7 +232,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">taro</a>
         		</li>
       		
 		</ul>
@@ -311,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2017/08/25/vue/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2019/07/09/taro/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/03/vue-cli/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue-cli使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/06/interview/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">interview</div>
+    <a href="/2019/07/04/cosUpload/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cosUpload</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -363,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue实例"><span class="toc-number">2.</span> <span class="toc-text">Vue实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板语法"><span class="toc-number">3.</span> <span class="toc-text">模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#父子组件传值"><span class="toc-number">4.</span> <span class="toc-text">父子组件传值</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -377,7 +345,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="vue" data-title="vue的使用" data-url="https://caijuan02.github.io/2017/08/25/vue/"></div>
+	<div class="ds-thread" data-thread-key="taro" data-title="taro" data-url="https://caijuan02.github.io/2019/07/09/taro/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
