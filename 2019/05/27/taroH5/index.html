@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
   <title>taroH5 | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用Taro框架生成H5时需要注意的地方">
+  <meta name="description" content="使用taro遇到的一些坑，使用Taro框架生成H5时需要注意的地方">
 <meta name="keywords" content="taro,H5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="taroH5">
 <meta property="og:url" content="https://caijuan02.github.io/2019/05/27/taroH5/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="使用Taro框架生成H5时需要注意的地方">
-<meta property="og:updated_time" content="2019-07-09T01:38:58.000Z">
+<meta property="og:description" content="使用taro遇到的一些坑，使用Taro框架生成H5时需要注意的地方">
+<meta property="og:updated_time" content="2019-07-11T01:58:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="taroH5">
-<meta name="twitter:description" content="使用Taro框架生成H5时需要注意的地方">
+<meta name="twitter:description" content="使用taro遇到的一些坑，使用Taro框架生成H5时需要注意的地方">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -174,8 +174,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用Taro框架生成H5时需要注意的地方<br><a id="more"></a></p>
-<ul>
+        <p>使用taro遇到的一些坑，使用Taro框架生成H5时需要注意的地方<br><a id="more"></a></p>
+<h3 id="使用taro遇到的一些坑"><a href="#使用taro遇到的一些坑" class="headerlink" title="使用taro遇到的一些坑"></a>使用taro遇到的一些坑</h3><ul>
+<li><p>不能在包含 JSX 元素的 map 循环中使用 if 表达式，尽量在 map 循环中使用条件表达式或逻辑表达式。<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;View className=<span class="string">'grade'</span>&gt;</span><br><span class="line">  &#123;hotelDetail.rank.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item ? &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['ic_star']&#125; /&gt; : &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['icon_star_info']&#125; /&gt;</span><br><span class="line">  &#125;)&#125;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在父组件上传参，需要用 data-goodId={item.goods_id}   方法里使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">goToDetail = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.currentTarget.dataset.goodid, <span class="string">'-------'</span>)</span><br><span class="line">  <span class="keyword">let</span> goodid = e.currentTarget.dataset.goodid</span><br><span class="line">  Taro.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">`/pages/detail/detail?goods_id=<span class="subst">$&#123;goodid&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用taro的Map组件，官方说跟小程序的使用是一样的，但是在实践中并不是完全一样，而且官网也没说<br>例如map 的一些方法：<br>视野发生变化时触发<br>小程序是  bindregionchange=”regionchange”<br>taro是       onRegionChange={this.regionchange}<br>点击标记点时触发，会返回marker的id<br>小程序是   bindmarkertap=”markertap”<br>taro是        onMarkerTap={this.markertap}<br>具体的对应文件可以在taro代码的  node_modules/@tarojs/components/types/Map.d.ts  文件中找到方法名</p>
+</li>
+<li>h5登录使用公众号授权，跳转回来的页面不对，是因为使用默认的路由方式会带#，而登录接口会把#号后面的屏蔽了</li>
+<li>使用input输入框的时候，设置height和line-height会有样式问题，输入的文字会被截取，不设置height和line-height就行</li>
+<li>使用setState用当前变量改变 （setState()实际上可以接受一个函数作为参数，函数的首个参数就是上一次的state。）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> &#123;<span class="attr">count</span>: prevState.count + <span class="number">1</span>&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="使用Taro框架生成H5时需要注意的地方"><a href="#使用Taro框架生成H5时需要注意的地方" class="headerlink" title="使用Taro框架生成H5时需要注意的地方"></a>使用Taro框架生成H5时需要注意的地方</h3><ul>
 <li>使用数组map循环时，把要循环的数组在state里定义下为空数组，不然render第一次执行时是undefined会报错;</li>
 <li>使用箭头函数传参用data-xxx 时，h5使用e.currentTarget报错，要使用 this.func.bind(this, 参数)</li>
 <li>图片大小不能在外层套一层View设宽高，然后image宽高为100%，要直接在image标签上设置宽高，因为在h5上会生成类名为Image设置的类名的div包裹img</li>
@@ -355,7 +369,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用taro遇到的一些坑"><span class="toc-number">1.</span> <span class="toc-text">使用taro遇到的一些坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Taro框架生成H5时需要注意的地方"><span class="toc-number">2.</span> <span class="toc-text">使用Taro框架生成H5时需要注意的地方</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -508,19 +522,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">get、post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,19 +550,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">get、post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +558,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,7 +570,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">taro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,15 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跳转</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,7 +614,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
             
             <div class="clearfix"></div>
