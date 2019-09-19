@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2019/08/21/vue-proxy/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="vue-cli 项目中 配置反向代理，包括vue2，vue3">
-<meta property="og:updated_time" content="2019-08-21T09:43:08.000Z">
+<meta property="og:updated_time" content="2019-09-19T06:06:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-proxy">
 <meta name="twitter:description" content="vue-cli 项目中 配置反向代理，包括vue2，vue3">
@@ -174,7 +174,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>vue-cli 项目中 配置反向代理，包括vue2，vue3</p>
+        <p>vue-cli 项目中 配置反向代理，包括vue2，vue3<br><a id="more"></a></p>
+<h3 id="vue2项目"><a href="#vue2项目" class="headerlink" title="vue2项目"></a>vue2项目</h3><p>修改config/index.js文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports 对象里dev下</span><br><span class="line">proxyTable 属性设置代理</span><br><span class="line">proxyTable: &#123;</span><br><span class="line">  <span class="string">'/api'</span>: &#123;</span><br><span class="line">    target: <span class="string">'http://dev.lywc.lyta.gov.cn'</span>,     <span class="comment">//需要代理的域名</span></span><br><span class="line">    changeOrigin: <span class="literal">true</span>,      <span class="comment">//表示是否跨域</span></span><br><span class="line">    logLevel: <span class="string">'debug'</span>,</span><br><span class="line">    secure: <span class="literal">false</span>,</span><br><span class="line">    pathRewrite: &#123;</span><br><span class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>配置完代理后，就可以使用  /api ， /api就代表了你所配置的代理域名<br>配置好这写之后就可以直接使用/api+接口名称发送请求了<br>例如:原来的请求地址为 192.168.1.1:8080/log<br>配置代理后直接使用 /api/log 就可以了</p>
+<h3 id="vue3项目"><a href="#vue3项目" class="headerlink" title="vue3项目"></a>vue3项目</h3><p>vue3跟vue2不一样的是，vue3的一些webpack都是默认配置的，不用手动修改了，需要自己手动在根目录下创建 vue.config.js  文件<br>文件内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">"webpack"</span>);</span><br><span class="line"><span class="keyword">const</span> $path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> $path.join(__dirname, dir);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  publicPath: <span class="string">""</span>,</span><br><span class="line">  lintOnSave: <span class="literal">true</span>,</span><br><span class="line">  chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config.resolve.alias.set(<span class="string">"@"</span>, resolve(<span class="string">"src"</span>));</span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    port: <span class="number">8080</span>,</span><br><span class="line">    proxy: &#123;</span><br><span class="line">      <span class="string">"/api"</span>: &#123;</span><br><span class="line">        target: <span class="string">"https://store.ihuyue.cn"</span>, <span class="comment">// 测试环境</span></span><br><span class="line">        <span class="comment">// target: 'https://store.ihuyue.cn',  // 正式环境</span></span><br><span class="line">        changeOrigin: <span class="literal">true</span>,</span><br><span class="line">        logLevel: <span class="string">"debug"</span>,</span><br><span class="line">        secure: <span class="literal">true</span>,</span><br><span class="line">        pathRewrite: &#123;</span><br><span class="line">          <span class="string">"^/api"</span>: <span class="string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    disableHostCheck: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    devtool: <span class="string">"source-map"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// eslint-disable-next-line no-dupe-keys</span></span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    plugins: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>同样使用 /api<br>配置好这写之后就可以直接使用/api+接口名称发送请求了<br>例如:原来的请求地址为 192.168.1.1:8080/log<br>配置代理后直接使用 /api/log 就可以了</p>
+<p>其实大概的原理就是请求首先发送到本地服务的api下去寻找数据的接口,但是本地服务不存在这个接口,刚好又做了转发,那么再去转发的目标域名下寻找对应的接口.从而实现由本地服务发送请求来解决跨域的问题.</p>
 
       
 
@@ -335,7 +340,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue2项目"><span class="toc-number">1.</span> <span class="toc-text">vue2项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue3项目"><span class="toc-number">2.</span> <span class="toc-text">vue3项目</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -500,7 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+                <a href="javascript:void(0)" class="js-tag color4">COS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,11 +517,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,18 +545,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">COS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
@@ -548,7 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,19 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">taro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">请求接口封装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,11 +577,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
+                <a href="javascript:void(0)" class="js-tag color2">请求接口封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,15 +601,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
               </li>
             
             <div class="clearfix"></div>
