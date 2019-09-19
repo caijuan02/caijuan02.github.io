@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://caijuan02.github.io/2019/08/21/vue-request-package/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
 <meta property="og:description" content="封装接口请求，以vue为例">
-<meta property="og:updated_time" content="2019-09-19T06:39:26.000Z">
+<meta property="og:updated_time" content="2019-09-19T06:41:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-request-package">
 <meta name="twitter:description" content="封装接口请求，以vue为例">
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>封装接口请求，以vue为例<br><a id="more"></a></p>
+        <p>封装接口请求，以vue为例<br><a id="more"></a><br><!-- more --></p>
 <h3 id="首先配置代理"><a href="#首先配置代理" class="headerlink" title="首先配置代理"></a>首先配置代理</h3><p>查看 <a href="https://caijuan02.github.io/2019/08/21/vue-proxy/#more">https://caijuan02.github.io/2019/08/21/vue-proxy/#more</a></p>
 <p>为了更方便，将自己定义的文件夹统一放在script文件夹下, 在根目录下创建script文件夹<br>新增   script/config/index.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description 配置显示在浏览器标签的title</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  title: <span class="string">"派对圈智能婚恋管理云平台"</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description token在Cookie中存储的天数，默认1天</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  cookieExpires: <span class="number">1</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description 是否使用国际化，默认为false</span></span><br><span class="line"><span class="comment">   *              如果不使用，则需要在路由中给需要在菜单中展示的路由设置meta: &#123;title: 'xxx'&#125;</span></span><br><span class="line"><span class="comment">   *              用来在菜单中显示文字</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  useI18n: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description api请求基础路径</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  baseUrl: &#123;</span><br><span class="line">    dev: <span class="string">"/api"</span>,   <span class="comment">//这里的/api就是配置代理后的</span></span><br><span class="line">    pro: <span class="string">"/"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description 默认打开的首页的路由name值，默认为home</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  homeName: <span class="string">"home"</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @description 需要加载的插件</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  plugin: &#123;</span><br><span class="line">    <span class="string">"error-store"</span>: &#123;</span><br><span class="line">      showInHeader: <span class="literal">true</span>, <span class="comment">// 设为false后不会在顶部显示错误日志徽标</span></span><br><span class="line">      developmentOff: <span class="literal">true</span> <span class="comment">// 设为true后在开发环境不会收集错误信息，方便开发中排查错误</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>封装axios.js   新建  script/utils/axios.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="comment">// import store from '@/store'</span></span><br><span class="line"><span class="comment">// import router from "vue-router"</span></span><br><span class="line">axios.defaults.withCredentials = <span class="literal">true</span></span><br><span class="line"><span class="comment">// 让ajax携带cookie</span></span><br><span class="line"><span class="comment">// import &#123; Spin &#125; from 'iview'</span></span><br><span class="line"><span class="keyword">const</span> addErrorLog = <span class="function"><span class="params">errorInfo</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// const &#123; statusText, status, request: &#123; responseURL &#125; &#125; = errorInfo</span></span><br><span class="line">  <span class="comment">// let info = &#123;</span></span><br><span class="line">  <span class="comment">//   type: 'ajax',</span></span><br><span class="line">  <span class="comment">//   code: status,</span></span><br><span class="line">  <span class="comment">//   mes: statusText,</span></span><br><span class="line">  <span class="comment">//   url: responseURL</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">  <span class="comment">// if (!responseURL.includes('save_error_logger')) store.dispatch('addErrorLog', info)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HttpRequest</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> (baseUrl) &#123;</span><br><span class="line">    <span class="keyword">this</span>.baseUrl = baseUrl</span><br><span class="line">    <span class="keyword">this</span>.queue = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  getInsideConfig () &#123;</span><br><span class="line">    <span class="keyword">const</span> config = &#123;</span><br><span class="line">      baseURL: <span class="keyword">this</span>.baseUrl,</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">  &#125;</span><br><span class="line">  destroy (url) &#123;</span><br><span class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>.queue[url]</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Object</span>.keys(<span class="keyword">this</span>.queue).length) &#123;</span><br><span class="line">      <span class="comment">// Spin.hide()</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  interceptors (instance, url) &#123;</span><br><span class="line">    <span class="comment">// 请求拦截</span></span><br><span class="line">    instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 添加全局的loading...</span></span><br><span class="line">      <span class="keyword">if</span> (!<span class="built_in">Object</span>.keys(<span class="keyword">this</span>.queue).length) &#123;</span><br><span class="line">        <span class="comment">// Spin.show() // 不建议开启，因为界面不友好</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.queue[url] = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">return</span> config</span><br><span class="line">    &#125;, error =&gt; &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 响应拦截</span></span><br><span class="line">    instance.interceptors.response.use(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// const LOGIN_PAGE_NAME = 'login'</span></span><br><span class="line">      <span class="keyword">if</span> (res.data.errorcode === <span class="number">80001</span>) &#123;</span><br><span class="line">        <span class="comment">// window.hyVue.$router.push(&#123; path: '/login' &#125;)</span></span><br><span class="line">        <span class="comment">// window.location.href = '/manage/#/login'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.destroy(url)</span><br><span class="line">      <span class="keyword">const</span> &#123; data, status &#125; = res</span><br><span class="line">      <span class="keyword">return</span> &#123; data, status &#125;</span><br><span class="line">    &#125;, error =&gt; &#123;</span><br><span class="line">      <span class="comment">// this.$Message.error('网络错误，请重试')</span></span><br><span class="line">      <span class="keyword">this</span>.destroy(url)</span><br><span class="line">      <span class="keyword">let</span> errorInfo = error.response</span><br><span class="line">      <span class="keyword">if</span> (!errorInfo) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; <span class="attr">request</span>: &#123; statusText, status &#125;, config &#125; = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(error))</span><br><span class="line">        errorInfo = &#123;</span><br><span class="line">          statusText,</span><br><span class="line">          status,</span><br><span class="line">          request: &#123; <span class="attr">responseURL</span>: config.url &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      addErrorLog(errorInfo)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> ret = error &amp;&amp; error.response &amp;&amp; error.response.data &amp;&amp; error.response.data.ret</span><br><span class="line">      <span class="keyword">if</span> (ret === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> status = error &amp;&amp; error.response &amp;&amp; error.response.status</span><br><span class="line">        <span class="keyword">let</span> statusText = error &amp;&amp; error.response &amp;&amp; error.response.statusText</span><br><span class="line">        <span class="keyword">let</span> reData = error &amp;&amp; error.response &amp;&amp; error.response.data &amp;&amp; error.response.data</span><br><span class="line">        error.err = &#123;</span><br><span class="line">          status: status,</span><br><span class="line">          statusText: statusText,</span><br><span class="line">          data: reData</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  request (options) &#123;</span><br><span class="line">    <span class="keyword">const</span> instance = axios.create()</span><br><span class="line">    options = <span class="built_in">Object</span>.assign(<span class="keyword">this</span>.getInsideConfig(), options)</span><br><span class="line">    <span class="keyword">this</span>.interceptors(instance, options.url)</span><br><span class="line">    <span class="keyword">return</span> instance(options)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> HttpRequest</span><br></pre></td></tr></table></figure></p>
@@ -490,7 +490,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +498,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,7 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,7 +522,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,10 +531,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">跳转小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,15 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,11 +578,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">请求接口封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">请求接口封装</a>
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,19 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
