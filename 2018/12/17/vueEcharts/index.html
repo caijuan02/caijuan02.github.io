@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-4.jpg">
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-5.jpg">
 <meta property="og:image" content="https://caijuan02.github.io/img/vue-6.jpg">
-<meta property="og:updated_time" content="2018-12-17T02:15:28.000Z">
+<meta property="og:updated_time" content="2019-12-17T07:23:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vueEcharts">
 <meta name="twitter:description" content="vue项目中使用echarts，和一些echarts的配置">
@@ -206,7 +206,11 @@
 <p>y轴的基准线有最低的数值决定,默认是0,解决数值相差较大的情况下面留白太多<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yAxis: &#123;</span><br><span class="line">	min: <span class="string">'dataMin'</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/vue-4.jpg" alt="Image text"></p>
 <ul>
-<li>折线的设置,在series里设置<br>折线颜色和小圆点颜色<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">itemStyle: &#123;</span><br><span class="line">		<span class="comment">// 折线数据拐点处的小圆点的颜色</span></span><br><span class="line">		color: <span class="string">"#fff"</span>,</span><br><span class="line">		<span class="comment">// 折线的颜色</span></span><br><span class="line">		lineStyle: &#123;</span><br><span class="line">			color: <span class="string">'rgb(40,177, 205)'</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>x坐标轴设置的值都显示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axisLabel:&#123;</span><br><span class="line">  interval: <span class="number">0</span>,<span class="comment">//让所有坐标值全部显示</span></span><br><span class="line">  rotate:<span class="number">30</span>,<span class="comment">//让坐标值旋转一定的角度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>折线的设置,在series里设置<br>折线颜色和小圆点颜色</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">itemStyle: &#123;</span><br><span class="line">		<span class="comment">// 折线数据拐点处的小圆点的颜色</span></span><br><span class="line">		color: <span class="string">"#fff"</span>,</span><br><span class="line">		<span class="comment">// 折线的颜色</span></span><br><span class="line">		lineStyle: &#123;</span><br><span class="line">			color: <span class="string">'rgb(40,177, 205)'</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="/img/vue-5.jpg" alt="Image text"></p>
@@ -521,11 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,7 +541,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,27 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">COS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">跳转小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,6 +566,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">COS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,6 +593,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">taro</a>
               </li>
              
@@ -597,19 +605,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">vue2 vue3</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,11 +637,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
               </li>
             
             <div class="clearfix"></div>
