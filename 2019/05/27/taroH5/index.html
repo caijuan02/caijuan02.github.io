@@ -177,7 +177,7 @@
         <p>使用taro遇到的一些坑，使用Taro框架生成H5时需要注意的地方<br><a id="more"></a></p>
 <h3 id="使用taro遇到的一些坑"><a href="#使用taro遇到的一些坑" class="headerlink" title="使用taro遇到的一些坑"></a>使用taro遇到的一些坑</h3><ul>
 <li><p>不能在包含 JSX 元素的 map 循环中使用 if 表达式，尽量在 map 循环中使用条件表达式或逻辑表达式。<br>例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;View className=<span class="string">'grade'</span>&gt;</span><br><span class="line">  &#123;hotelDetail.rank.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item ? &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['ic_star']&#125; /&gt; : &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['icon_star_info']&#125; /&gt;</span><br><span class="line">  &#125;)&#125;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;View className=<span class="string">'grade'</span>&gt;</span><br><span class="line">  &#123;hotelDetail.rank.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item ? &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['ic_star']&#125; /&gt; : &lt;Image key=&#123;index&#125; className='grade-img' src=&#123;assets['icon_star_info']&#125; /&gt;</span><br><span class="line">  &#125;)&#125;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在父组件上传参，需要用 data-goodId={item.goods_id}   方法里使用</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">goToDetail = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.currentTarget.dataset.goodid, <span class="string">'-------'</span>)</span><br><span class="line">  <span class="keyword">let</span> goodid = e.currentTarget.dataset.goodid</span><br><span class="line">  Taro.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">`/pages/detail/detail?goods_id=<span class="subst">$&#123;goodid&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -534,7 +534,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color4">COS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上传图片、文档、视频</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,15 +550,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">COS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">上传图片、文档、视频</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +558,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,15 +570,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,19 +594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ref</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +610,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
+                <a href="javascript:void(0)" class="js-tag color4">ref</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">请求接口封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue-cli项目实践</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,15 +634,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跳转</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">echarts</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跳转</a>
               </li>
              
               <li class="article-tag-list-item">
