@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caijuan02.github.io">
-  <title>test | 蔡娟-爱学习的小前端</title>
+  <title>AI-recognition | 蔡娟-爱学习的小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文旅小程序通用框架说明">
+  <meta name="description" content="类似识花君小程序AI识别功能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="https://caijuan02.github.io/2020/02/16/test/index.html">
+<meta property="og:title" content="AI-recognition">
+<meta property="og:url" content="https://caijuan02.github.io/2020/07/03/test/index.html">
 <meta property="og:site_name" content="蔡娟-爱学习的小前端">
-<meta property="og:description" content="文旅小程序通用框架说明">
-<meta property="og:updated_time" content="2020-05-07T03:44:01.000Z">
+<meta property="og:description" content="类似识花君小程序AI识别功能">
+<meta property="og:updated_time" content="2020-07-03T11:28:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="文旅小程序通用框架说明">
+<meta name="twitter:title" content="AI-recognition">
+<meta name="twitter:description" content="类似识花君小程序AI识别功能">
   
     <link rel="alternative" href="/atom.xml" title="蔡娟-爱学习的小前端" type="application/atom+xml">
   
@@ -160,189 +160,28 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      AI-recognition
     </h1>
   
 
         
-        <a href="/2020/02/16/test/" class="archive-article-date">
-  	<time datetime="2020-02-16T04:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
+        <a href="/2020/07/03/test/" class="archive-article-date">
+  	<time datetime="2020-07-03T12:50:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="文旅小程序通用框架说明"><a href="#文旅小程序通用框架说明" class="headerlink" title="文旅小程序通用框架说明"></a>文旅小程序通用框架说明</h1><a id="more"></a>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run install</span><br></pre></td></tr></table></figure>
-<h3 id="2-运行小程序"><a href="#2-运行小程序" class="headerlink" title="2. 运行小程序"></a>2. 运行小程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-<h3 id="3-打包、发布小程序"><a href="#3-打包、发布小程序" class="headerlink" title="3. 打包、发布小程序"></a>3. 打包、发布小程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-<h4 id="发布h5"><a href="#发布h5" class="headerlink" title="发布h5"></a>发布h5</h4><p>已添加替换图片线上地址url功能</p>
-<ol>
-<li><p>打开package.json更改版本号version，这里建议不要用npm version patch，因为patch之后的步骤还会影响到代码</p>
-</li>
-<li><p>生成指定模板的h5</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build:h5</span><br></pre></td></tr></table></figure>
-<ol>
-<li>发布到线上</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
-<p>注意，每次发布尽量更新版本号，由于cos上有缓存，如果只覆盖上传的话会无法即时生效</p>
-<h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><p>源代码放置于src，开发时可使用@定位到src目录下，如 import AuthBtn from ‘@/components/auth-btn’</p>
-<ul>
-<li>apis: 请求接口地址、参数等信息</li>
-<li>common: 样式文件等</li>
-<li>components: 组件</li>
-<li>config: 项目配置信息</li>
-<li>pages: 页面文件</li>
-<li>static: 素材资源</li>
-<li>store: vuex store</li>
-<li>utils: helper工具等</li>
-<li>App.vue: 入口文件，放置全局方法、样式</li>
-<li>main.js: 入口文件，放置初始化方法</li>
-<li>manifest.json 小程序项目配置项，使用mp-weixin字段配置，详情参考 <a href="https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin" target="_blank" rel="noopener">https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin</a></li>
-<li>pages.json 小程序页面配置，详情参考 <a href="https://uniapp.dcloud.io/collocation/pages" target="_blank" rel="noopener">https://uniapp.dcloud.io/collocation/pages</a></li>
+        <p>类似识花君小程序AI识别功能<br><a id="more"></a><br>这里只说明简单的思路，具体的识别交互视项目而定，比如说拍照后页面关闭摄像头，展示当前拍的照片</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>  主要是调起摄像头实现拍照，用拍的图片请求接口，接口返回ai识别的内容</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>需要调起微信摄像头    （使用微信小程序camera组件）</li>
+<li>实现拍照并记录图片    （拍照功能使用小程序api  takePhoto）</li>
+<li>从相册选择并记录图片 （从相册选择图片使用小程序api chooseImage）</li>
 </ul>
-<h2 id="模版分类"><a href="#模版分类" class="headerlink" title="模版分类"></a>模版分类</h2><p>综合来看，目前首页和第二页卡有模版定制的需求，在src/pages/index/home和src/pages/index/travel内规划了不同模版使用的页面，使用不同页面开发不同模版的页面。封成不同组件进行开发，home页和travel页只做组件组合的功能。</p>
-<h3 id="新建模板"><a href="#新建模板" class="headerlink" title="新建模板"></a>新建模板</h3><ol>
-<li>在build/templateConfig.js中添加一个模板名称，如{ name: ‘南川模板’, id: ‘nc’}。同时维护其中的replaceVue数组，对应需要在build的时候替换的vue页面，如home.vue等</li>
-<li>在src/index/home下创建home-nc.vue。在src/index/travel下创建travel-nc.vue。在这两个vue文件里维护模板</li>
-<li><figure class="highlight plain"><figcaption><span>run dev```选择模板进行开发</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4. 开发完成后```npm run build```选择模板进行打包，打包后入口路径统一为pages/index/home/home</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 路由、页面跳转</span><br><span class="line">routeUtil中封装了跳转的方法，使用方式</span><br></pre></td></tr></table></figure>
-<p>import { routeTo } from ‘utils/routeUtil’<br>routeTo({<br> name: ‘’,<br> params: {id: ‘abc’},<br> type: ‘redirect’<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">参数设置：</span><br><span class="line">+ name 跳转页面name、可在路由配置页src/config/routeConfig中查看</span><br><span class="line">+ params 跳转参数，类型object</span><br><span class="line">+ type 跳转类型： 默认navigate， 可选redirect、switchTab、reLaunch</span><br><span class="line"></span><br><span class="line">## vuex</span><br><span class="line">使用vuex进行数据管理，代码参考example页内使用vuex store进行数据管理button</span><br><span class="line">建议： 内容不经常变化的数据可以使用store缓存一份，如景点信息。对于一些接口请求时间较长的数据（如需要计算距离或返回用户个人信息的相关内容），也可以先展示缓存内容，再请求一次接口刷新信息。</span><br><span class="line"></span><br><span class="line">### 使用BaseStore和components/pages下的组件联合开发</span><br><span class="line"></span><br><span class="line">** 严重建议使用以下方式进行开发。**</span><br><span class="line"></span><br><span class="line">使用封装好的BaseStore设置store，baseStore封装了普通列表、分类列表、缓存详情简单详情等内容。</span><br><span class="line"></span><br><span class="line">不满足情况的时候也可以添加标准vuex模式代码。</span><br><span class="line"></span><br><span class="line">### store引入</span><br></pre></td></tr></table></figure>
-<p>import { createStore, BaseList, BaseCachedDataMap, TempData } from ‘./baseStore’</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### store集成</span><br></pre></td></tr></table></figure>
-<p>export default createStore({<br> state: {<br>   bestSpotList: new BaseList(), // 初始化列表，name为bestSpotList<br> },<br> actions: {</p>
-   <!-- 首次请求列表数据 -->
-<p>   async fetchBestSpotList ({ dispatch }, payload = {}) {</p>
-<pre><code>return dispatch(&apos;fetchList&apos;, {
-  params: payload, // 请求参数
-  api: apis.scenic.getBestSpotList, // 传入请求api
-  name: &apos;bestSpotList&apos; // 传入初始化的name
-})
-</code></pre><p>   },</p>
-   <!-- 下一页 -->
-<p>   async fetchBestSpotListNextPage ({ dispatch }, payload = {}) {</p>
-<pre><code>return dispatch(&apos;fetchListNextPage&apos;, {
-  params: payload,  // 这里翻页不需要传入页码，baseStore自动计算
-  api: apis.scenic.getBestSpotList, // 传入请求api
-  name: &apos;bestSpotList&apos; // 传入初始化的name
-})
-</code></pre><p>   },</p>
-   <!-- 清除列表数据 -->
-<p>   clearBestSpotList ({ dispatch }, payload = {}) {</p>
-<pre><code>dispatch(&apos;clearList&apos;, {
-  name: &apos;bestSpotList&apos;
-})
-</code></pre><p>   }<br> }<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 导出namespace</span><br></pre></td></tr></table></figure>
-<!-- src/store/index.js -->
-<p>import tourismScenic from ‘./tourism-scenic’<br>Vue.use(Vuex)<br>const store = new Vuex.Store({<br> modules: {<br>   // …<br>   tourismScenic<br> }<br>})<br>export default store</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### page内请求、获取数据</span><br></pre></td></tr></table></figure>
-<p>components: {<br> ListPage<br>},<br>computed: {<br> …mapState(‘scenic’, [<br>   ‘scenicList’<br> ]),<br> scenicListData () {<br>   console.log(‘scenicList’, this.scenicList)<br>   return this.scenicList.data<br> }<br>},<br>methods: {<br> …mapActions(‘scenic’, [<br>   ‘fetchScenicList’,<br>   ‘fetchScenicListNextPage’<br> ]),<br> loadNextPage () { // 这里翻页不需要传入页码，baseStore自动计算<br>   this.fetchScenicListNextPage()<br> },<br> handleRefresh () {<br>   this.fetchScenicList()<br> }<br>},<br>onUnload () {</p>
- <!-- 清除列表信息，如果需要缓存，则不清 -->
-<p> // this.clearScenicList()<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">配合ListPage组件，将数据传入</span><br></pre></td></tr></table></figure>
-<p>&lt;ListPage<br> :status = “scenicList.status”<br> :error = “scenicList.error”<br> :inited = “scenicList.inited”<br> @refresh = “handleRefresh”<br> @reachBottom = “loadNextPage”</p>
-<blockquote>
-<p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在/pages/scenic下的list、detail、list-bj页面分别用了列表页+普通列表数据、详情页+详情数据、列表页+分类数据进行数据管理，/pages/index/personal/about页使用了详情页+简单详情数据进行管理。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## request</span><br><span class="line">src/utils/request 封装了网络请求方法，可以使用request.\$get和request.\$post方法请求数据。</span><br><span class="line">request方法封装了统一格式的错误信息，建议使用try catch捕获error，再根据需求处理。</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<p>try {<br>  await request.$get(‘/xn/wxapp/api/scenic_detail’, {<br>    a: 1,<br>    b: 2<br>  })<br>} catch (err) {<br>  console.log(err)<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request相关设置在src/config/request下，可以设置请求的hosts、url拼接参数和header。</span><br></pre></td></tr></table></figure></p>
-<p>  hosts: {<br>    prod: ‘<a href="https://gw.wltong.cn" target="_blank" rel="noopener">https://gw.wltong.cn</a>‘,<br>    dev: ‘<a href="https://tgw.wltong.cn" target="_blank" rel="noopener">https://tgw.wltong.cn</a>‘<br>  },<br>  url: {<br>    wxa_appid: APPID,<br>    wxa_session: true<br>  },<br>  header: {<br>    gateway: null<br>    // gateway: {<br>    //   id: ‘AKIDC6k08jLdn5NnDE7djM22eXNZEpRLN8N9yWaa’,<br>    //   key: ‘f1mzqSGl8321ZKk3kVh2j6tpk1s8j3k9RZy8T8e’<br>    // }<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## 样式</span><br><span class="line"></span><br><span class="line">### 字体</span><br><span class="line">某些文字需要ios上显示字体pingfang，安卓为默认字体。</span><br><span class="line">在需要这些字体的页面里加上</span><br><span class="line">** 使用ListPage、DetailPage的页面不需要添加这些class **</span><br></pre></td></tr></table></figure></p>
-<p>  // 页面根元素<br>    <template><br>      <view :class="[platform]"><br>      // …<br>    </view></template><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">再在元素class里加上其中之一即可，分别对应pingfang semibold,pingfang meduim, pingfang regular, pingfang light</span><br></pre></td></tr></table></figure></p>
-<p>f-semibold<br>f-medium<br>f-regular<br>f-light<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如```class=&quot;f-light&quot;</span><br></pre></td></tr></table></figure></p>
-<p>可参考src/index/example.vue</p>
-<h3 id="iPhone-X适配"><a href="#iPhone-X适配" class="headerlink" title="iPhone X适配"></a>iPhone X适配</h3><p>在src/App.vue的style中设置了iPhone X的适配方式是底部加高68rpx<br>在需要适配的页面加上ipxClass相关代码即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 页面根元素</span><br><span class="line">  &lt;template&gt;</span><br><span class="line">    &lt;view :class=&quot;[ipxClass]&quot;&gt;</span><br><span class="line">    // ...</span><br><span class="line">  &lt;/template&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="BannerSwiper"><a href="#BannerSwiper" class="headerlink" title="BannerSwiper"></a>BannerSwiper</h3><p>可适用于1张图片或多张图片(可以包含video)，默认一张图片时不可滚动。<br>使用方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;BannerSwiper :list = &quot;foodDetailData.img&quot; :showProgress = &quot;true&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>list传入img数组，数据项为图片地址src。</li>
-<li>list长度为1时默认图片不可拖动</li>
-<li>showIndicator展示右下角页码样式，showProcess展示进度条样式</li>
-<li>监听tapItem事件会得到当前选中项信息</li>
-</ul>
-<h3 id="rich-text-parse"><a href="#rich-text-parse" class="headerlink" title="rich-text-parse"></a>rich-text-parse</h3><p>用于展示html富文本类型的文章，使用方法见示例页。</p>
-<ul>
-<li>自定义样式可以在引用此组件的页面修改，但是不要加scoped，如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style rel=&quot;stylesheet/scss&quot; lang=&apos;scss&apos;&gt;</span><br><span class="line">.wxParse.my-content &#123;</span><br><span class="line">  .p &#123;</span><br><span class="line">    font-size: 24rpx;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可以参考src/pages/index/article页实现</p>
-<ul>
-<li>使用自定义样式时需加上组件属性className，防止污染其他页面</li>
-<li>更多使用规则可以参考<a href="https://ext.dcloud.net.cn/plugin?id=364" target="_blank" rel="noopener">https://ext.dcloud.net.cn/plugin?id=364</a></li>
-</ul>
-<h3 id="vplayer视频播放器"><a href="#vplayer视频播放器" class="headerlink" title="vplayer视频播放器"></a>vplayer视频播放器</h3><p>用于播放视频、直播</p>
-<p>参数设置：</p>
-<ul>
-<li>wrapStyle 设置播放器样式</li>
-<li>liveSrc/videoSrc 直播/视频地址</li>
-<li>poster 视频未播放时封面图</li>
-<li>autoPlay 自动播放(wifi环境下)</li>
-<li>loop 循环播放</li>
-<li>muted 静音</li>
-<li>showMuteBtn/showFullScreenBtn 显示静音、全凭按钮</li>
-<li>placeholder 占位图（直播/视频地址为空时）</li>
-</ul>
-<p>事件：</p>
-<ul>
-<li>play: 视频播放</li>
-<li>pause: 视频暂停</li>
-<li>ended: 视频结束</li>
-<li>fullscreenchange: 视频全屏</li>
-<li>error: 视频出错</li>
-</ul>
-<h3 id="翻页列表"><a href="#翻页列表" class="headerlink" title="翻页列表"></a>翻页列表</h3><p>一个纵向scroll-view list组件</p>
-<ul>
-<li>默认纵向铺满</li>
-<li>支持传入tabHeight(rpx)，组件高度就会减掉这个高度</li>
-<li>通过传入status改变底部loading状态</li>
-<li>监听滚动到底部事件</li>
-</ul>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;view style=&quot;height: 100rpx&quot;&gt;搜索结果&lt;/view&gt;</span><br><span class="line">&lt;ScrollList tabHeight=&quot;100&quot; :name=&quot;listName&quot; @reachBottom=&quot;reachBottom&quot; :status=&quot;status&quot;&gt;</span><br><span class="line">  &lt;!-- 内嵌slot --&gt;</span><br><span class="line">  &lt;view class=&quot;item&quot; v-for=&quot;item in list&quot;&gt;</span><br><span class="line">    &lt;image :src=&quot;item.img&quot; /&gt;</span><br><span class="line">    &lt;view class=&quot;text&quot;&gt;&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/ScrollList&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h5><p>组件内部请自行填充列表和样式</p>
-<h5 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h5><p>非必填，用于区分多个scroll-list</p>
-<h5 id="reachBottom事件"><a href="#reachBottom事件" class="headerlink" title="reachBottom事件"></a>reachBottom事件</h5><p>用户滑动触底触发，注入的参数为name属性传入的值，以便区分多个scroll-list的事件</p>
-<h5 id="status属性"><a href="#status属性" class="headerlink" title="status属性"></a>status属性</h5><p>列表底部的loading状态</p>
-<table>
-<thead>
-<tr>
-<th>枚举值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hidden</td>
-<td>隐藏</td>
-</tr>
-<tr>
-<td>loading</td>
-<td>正在加载</td>
-</tr>
-<tr>
-<td>failed</td>
-<td>加载失败，请稍后重试</td>
-</tr>
-<tr>
-<td>empty</td>
-<td>暂无数据</td>
-</tr>
-<tr>
-<td>finished</td>
-<td>已无更多内容</td>
-</tr>
-</tbody>
-</table>
-<h5 id="loading图标"><a href="#loading图标" class="headerlink" title="loading图标"></a>loading图标</h5><p>可以根据需要替换 <figure class="highlight plain"><figcaption><span>loading图标</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### time-line 时间轴组件</span><br><span class="line">固定样式</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;../assets/time-line.jpeg&quot; width=&quot;300px&quot; style=&quot;margin:auto&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  <timeline :detailpath="detailPath" :listdata="listData"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### detailPath</span><br><span class="line"></span><br><span class="line">detailPath非必填，类型为String，点击某天的查看详情，跳转到详情页的path</span><br><span class="line"></span><br><span class="line">跳转的时候会带上相应的id和name参数</span><br><span class="line"></span><br><span class="line">##### listData</span><br><span class="line"></span><br><span class="line">listData必填，类型为Array，数组元素为对象，属性包含</span><br><span class="line"></span><br><span class="line">|属性名|必填|类型|备注| 例子</span><br><span class="line">| --------- | ---- | --- | --------------------|----------|</span><br><span class="line">|day_title| 否 | string | 日期 |  第一天 |</span><br><span class="line">|day_info	|否 | string | 日期描述 | |</span><br><span class="line">|list| 是| Array | 景点列表 | ||</span><br><span class="line"></span><br><span class="line">list包含的元素类型为Object</span><br><span class="line"></span><br><span class="line">|list子元素属性名|必填|类型|备注| 例子</span><br><span class="line">| --------- | ---- | --- | --------------------|----------|</span><br><span class="line">|name| 是 | string | 景点名称 | 金佛山风景区 |</span><br><span class="line">|id	|是 | string |  | |</span><br><span class="line">|img| 是| Array | 景点图片 | |</span><br><span class="line">|desc| 是| Array | 景点描述 | 国家5A级风景区 |</span><br><span class="line">|comment_info| 否 | Object | 景点列表 | ||</span><br><span class="line"></span><br><span class="line">comment_info评论内容包含的元素类型为Object</span><br><span class="line"></span><br><span class="line">| comment_info子元素属性名 |必填|类型|备注| 例子</span><br><span class="line">| --------- | ---- | --- | --------------------|----------|</span><br><span class="line">|head_img_url| 否 | string | 用户头像 |  |</span><br><span class="line">|nick	|是 | string | 用户昵称 | |</span><br><span class="line">|content| 是| string | 评论内容 | ||</span><br><span class="line"></span><br><span class="line">### 图片组件</span><br><span class="line"></span><br><span class="line">由于文旅类小程序会大面积使用图片，且管理后台上传图片时可能误传过大的图片导致加载过慢，建议在提测阶段统一使用t-image组件，图片加载过慢时会警告或报错。</span><br><span class="line">#### 使用</span><br></pre></td></tr></table></figure></timeline></p>
-<p>  <timage t-style="border-radius: 6rpx;" :src="item.img" mode="aspectFit" class="image" lazy-load="true"><br>  // script<br>  import Timage from ‘@/components/ui/t-image’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">跟image唯一的区别就是前面加了个T，和style前加了个t-。在正式上线前可以方便的全局查找替换掉</span><br><span class="line"></span><br><span class="line">除了src，其他的都是非必填</span><br><span class="line"></span><br><span class="line">#### 定义超时时长</span><br><span class="line"></span><br><span class="line">超时时长ImageTimout定义在</span><br></pre></td></tr></table></figure></timage></p>
-<p>‘@/config/timeoutConfig’<br>```<br>默认警告时长为800ms，报错为1600ms</p>
-<h4 id="自定义统计"><a href="#自定义统计" class="headerlink" title="自定义统计"></a>自定义统计</h4><p>可以在小程序后台–统计–自定义统计中加上<code>img-timeout</code>事件，接收<code>type</code>、<code>time</code>和<code>src</code>字段。组件默认会发送统计，在后台配置后可以看到数据。</p>
+<h2 id="主要代码"><a href="#主要代码" class="headerlink" title="主要代码"></a>主要代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里camera组件只是调起摄像头 拍照和从相册选择图片的按钮和功能需要自己实现  可以自定义 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">camera</span></span></span><br><span class="line"><span class="tag">  <span class="attr">device-position</span>=<span class="string">"back"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flash</span>=<span class="string">"off"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">binderror</span>=<span class="string">"error"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width: 100%; height: 100vh;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">camera</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 从相册选择按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"choose-photo"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"../../static/icon_photo@3x.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"cover"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">bindtap</span>=<span class="string">"choosePhoto"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 拍照按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"take-photo"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"../../static/icon_camera@3x.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"cover"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">bindtap</span>=<span class="string">"takePhoto"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="comment">// 从相册选择识别方法</span></span><br><span class="line">choosePhoto() &#123;</span><br><span class="line">  <span class="keyword">const</span> that = <span class="keyword">this</span></span><br><span class="line">  wx.chooseImage(&#123;</span><br><span class="line">    count: <span class="number">1</span>,</span><br><span class="line">    sizeType: [<span class="string">'original'</span>],</span><br><span class="line">    sourceType: [<span class="string">'album'</span>],</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="comment">// tempFilePath可以作为img标签的src属性显示图片</span></span><br><span class="line">      <span class="built_in">console</span>.log(res.tempFilePaths[<span class="number">0</span>], <span class="string">'res***********'</span>)</span><br><span class="line">      <span class="comment">// that.getScanInfo 是请求识别的接口</span></span><br><span class="line">      that.getScanInfo(res.tempFilePaths[<span class="number">0</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 拍照识别方法</span></span><br><span class="line">takePhoto() &#123;</span><br><span class="line">  <span class="keyword">const</span> that = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">const</span> ctx = wx.createCameraContext()</span><br><span class="line">  ctx.takePhoto(&#123;</span><br><span class="line">    quality: <span class="string">'high'</span>,</span><br><span class="line">    success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res, <span class="string">'res***********'</span>)</span><br><span class="line">      <span class="comment">// res.tempImagePath 就是拍照获取的图片</span></span><br><span class="line">      <span class="comment">// that.getScanInfo 是请求识别的接口</span></span><br><span class="line">      that.getScanInfo(res.tempImagePath)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
       
 
@@ -432,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2020/02/16/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caijuan02.github.io/2020/07/03/test/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -446,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/07/vue-ref/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue-ref
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/17/vue-get-props/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue-get-props</div>
+    <a href="/2020/05/07/vue-ref/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-ref</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -484,7 +314,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文旅小程序通用框架说明"><span class="toc-number">1.</span> <span class="toc-text">文旅小程序通用框架说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.1.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-运行小程序"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 运行小程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-打包、发布小程序"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 打包、发布小程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#发布h5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">发布h5</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目目录"><span class="toc-number">1.2.</span> <span class="toc-text">项目目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模版分类"><span class="toc-number">1.3.</span> <span class="toc-text">模版分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建模板"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-X适配"><span class="toc-number">1.3.2.</span> <span class="toc-text">iPhone X适配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">1.4.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BannerSwiper"><span class="toc-number">1.4.1.</span> <span class="toc-text">BannerSwiper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rich-text-parse"><span class="toc-number">1.4.2.</span> <span class="toc-text">rich-text-parse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vplayer视频播放器"><span class="toc-number">1.4.3.</span> <span class="toc-text">vplayer视频播放器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#翻页列表"><span class="toc-number">1.4.4.</span> <span class="toc-text">翻页列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#slot"><span class="toc-number">1.4.4.1.1.</span> <span class="toc-text">slot</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#name属性"><span class="toc-number">1.4.4.1.2.</span> <span class="toc-text">name属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#reachBottom事件"><span class="toc-number">1.4.4.1.3.</span> <span class="toc-text">reachBottom事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#status属性"><span class="toc-number">1.4.4.1.4.</span> <span class="toc-text">status属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#loading图标"><span class="toc-number">1.4.4.1.5.</span> <span class="toc-text">loading图标</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义统计"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">自定义统计</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-number">2.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要代码"><span class="toc-number">3.</span> <span class="toc-text">主要代码</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -498,7 +328,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="test" data-title="test" data-url="https://caijuan02.github.io/2020/02/16/test/"></div>
+	<div class="ds-thread" data-thread-key="test" data-title="AI-recognition" data-url="https://caijuan02.github.io/2020/07/03/test/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -649,19 +479,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">COS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">上传图片、文档、视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,7 +487,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">COS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上传图片、文档、视频</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,11 +519,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习文档</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,19 +535,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">taro</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color2">qq互联登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ref</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,6 +575,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跳转</a>
               </li>
              
@@ -745,23 +587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">打开H5页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ref</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
